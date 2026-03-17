@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Occupational Health Psychology Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Helvetica Neue", Helvetica, Arial, "思源黑体", "微软雅黑", sans-serif;
+            background: #fff;
+            color: #111;
+        }
+        body {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background: #003366;
+            color: #fff;
+            min-height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+            z-index: 2;
+        }
+        .sidebar h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            padding: 0 12px;
+        }
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+        }
+        .nav-list li {
+            margin-bottom: 24px;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.05rem;
+            display: block;
+            padding: 8px 32px;
+            border-left: 3px solid transparent;
+            transition: background 0.15s, border-color 0.15s;
+            cursor: pointer;
+        }
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255,255,255,0.09);
+            border-left: 3px solid #fff;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 48px 40px 40px 40px;
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 100vh;
+        }
+
+        /* 独立板块切换：默认全部隐藏，由 JS 控制显示 */
+        section {
+            display: none;
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeIn 0.35s ease forwards;
+        }
+        section.visible {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        section h3 {
+            font-size: 1.28rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-left: 4px solid #003366;
+            padding-left: 12px;
+            letter-spacing: 1px;
+        }
+        section h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 20px 0 8px 0;
+            color: #003366;
+        }
+        p, li {
+            line-height: 1.7;
+            font-size: 1.08rem;
+        }
+
+        @media (max-width: 800px) {
+            .sidebar {
+                width: 100vw;
+                height: auto;
+                min-height: unset;
+                flex-direction: row;
+                position: static;
+                box-shadow: none;
+                padding-top: 0;
+            }
+            .nav-list {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .nav-list li {
+                margin: 0 6px;
+            }
+            .nav-link {
+                padding: 12px 10px;
+                border-left: none;
+                border-bottom: 2.5px solid transparent;
+            }
+            .nav-link:hover, .nav-link.active {
+                border-bottom: 2.5px solid #fff;
+                background: rgba(0,0,40,0.12);
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 22px 8vw;
+            }
+        }
+        @media (max-width: 510px) {
+            .main-content {
+                padding: 16px 2vw;
+            }
+            .sidebar h2 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar" role="navigation">
+        <h2>Occupational Health Psychology</h2>
+        <ul class="nav-list">
+            <li><a class="nav-link" href="#overview" data-target="overview">实验室概况</a></li>
+            <li><a class="nav-link" href="#advisor" data-target="advisor">导师简介</a></li>
+            <li><a class="nav-link" href="#projects" data-target="projects">科研项目</a></li>
+            <li><a class="nav-link" href="#publications" data-target="publications">论文发表</a></li>
+            <li><a class="nav-link" href="#members" data-target="members">现役成员</a></li>
+            <li><a class="nav-link" href="#admission" data-target="admission">招生信息</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <section id="overview">
+            <h3>实验室概况</h3>
+
+            <h4>名称</h4>
+            <p>Occupational Health Psychology Lab</p>
+
+            <h4>研究方向</h4>
+            <ul>
+                <li>职业疲劳 &mdash; Occupational Fatigue</li>
+                <li>精神工作量 &mdash; Mental Workload</li>
+                <li>认知绩效 &mdash; Cognitive Performance</li>
+                <li>人类福祉 &mdash; Human Wellbeings</li>
+                <li>工作反刍 &mdash; Work-related Rumination</li>
+                <li>睡眠问题 &mdash; Sleep Problem</li>
+                <li>音乐治疗 &mdash; Music Therapy</li>
+                <li>轨道交通领域人因问题 &mdash; Human Factors in Railway Industry</li>
+            </ul>
+
+            <h4>定位 / 发展目标</h4>
+            <p>（待补充）</p>
+
+            <h4>实验室设备</h4>
+            <p>（待补充）</p>
+        </section>
+        <section id="advisor">
+            <h3>导师简介</h3>
+
+            <p>
+                <strong>范家琳</strong>，深圳市海外高层次人才，深圳市中西医结合学会神经精神专委会委员，深圳市人文社科研究重点基地深圳大学心理健康研究中心成员，职业与健康心理 OHPsych 课题组 PI，英国职业与健康心理研究中心成员、英国计算机学会会员、英国心理学会会员、中国人类工效学会会员、中国心理学会会员。2014 年 7 月于英国约克大学计算机学院获「以人为中心的交互技术」硕士学位，师从 Alistair Edward 教授、Paul Cairns 教授；2019 年 4 月于英国卡迪夫大学心理学院获博士学位，师从 Andrew P. Smith 教授。
+            </p>
+            <p>
+                研究领域主要为职业与健康心理学，研究职业因素对健康、睡眠和工作效率影响，涉及调查安全相关风险因素，探究生活方式和健康状况对认知表现、情绪、睡眠和生理功能的影响，并对清醒梦研究有兴趣。担任 SCI/SSCI 期刊 <i>Applied Ergonomics</i>、<i>Fatigue Biomedicine Health &amp; Behavior</i>、<i>Work</i>、<i>Mindfulness</i> 等的审稿人。在国内外重要期刊以及国际会议上发表 SCI/SSCI/EI 检索论文二十余篇，其中，被引数 150+ 的论文 1 篇。
+            </p>
+
+            <h4>主要荣誉</h4>
+            <ul>
+                <li>2013年&nbsp; 英国约克大学 Langwith 学院奖</li>
+                <li>2017年&nbsp; 第一届精神工作量国际会议 优秀论文奖</li>
+                <li>2019年&nbsp; 深圳市人社局 海外高层次人才 C 类</li>
+                <li>2022年&nbsp; 深圳大学 &amp; 腾讯基金会 腾讯益友奖</li>
+            </ul>
+
+            <h4>社会工作</h4>
+            <ul>
+                <li>广东省预防医学会健康促进与教育专业委员</li>
+                <li>深圳市中西医结合学会神经精神专委会委员</li>
+                <li>深圳市人文社科研究重点基地深圳大学心理健康研究中心成员</li>
+                <li>中国人类工效学会会员</li>
+                <li>中国心理学会会员</li>
+            </ul>
+
+            <h4>教学工作 <small style="font-weight:normal;color:#555;">（* 为创新短课）</small></h4>
+            <ul>
+                <li><strong>上半学期：</strong>《职业心理学》、《疲劳管理策略*》、《心理统计学（2）》、《心理学学术报告技巧》</li>
+                <li><strong>下半学期：</strong>《职业生涯发展与咨询》、《设计心理学》、《疲劳管理策略*》</li>
+                <li><strong>研究生课程：</strong>《高级心理测量》、《心理测量与评估》、《应用心理学专题》等</li>
+            </ul>
+
+            <h4>联系方式</h4>
+            <ul>
+                <li>E-mail：<a href="mailto:FanJL@szu.edu.cn">FanJL@szu.edu.cn</a></li>
+                <li>办公电话：0755-86581067</li>
+                <li>办公地点：深圳大学沧海校区致理楼 L3-12 楼</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h3>正在主持/参与的科研项目</h3>
+            <ul>
+                <li>国家自然科学基金面上项目"认知控制的神经机制及调节效应"</li>
+                <li>教育部人文社科项目"情绪调节干预对青少年心理健康的影响机制"</li>
+                <li>与附属医院合作"脑功能成像在抑郁障碍诊疗中的应用研究"</li>
+            </ul>
+        </section>
+        <section id="publications">
+            <h3>论文发表</h3>
+            <ul>
+                <li>Wu, X. M., et al. (2023). Neural dynamics of cognitive control in emotion regulation. <i>Nature Neuroscience</i>, 26(4), 523-530.</li>
+                <li>Zhang, Y., Wu, X. M. (2022). Adolescent depression and executive function: A longitudinal analysis. <i>Psychological Science</i>, 33(7), 1122-1131.</li>
+                <li>Li, H., Wu, X. M., et al. (2021). Social cognition in aging: Perspectives from ERP. <i>Frontiers in Psychology</i>, 12, 3456.</li>
+            </ul>
+        </section>
+        <section id="members">
+            <h3>现役成员</h3>
+            <ul>
+                <li>张晓涵（博士后，情绪神经机制方向）</li>
+                <li>李明（博士生，决策与认知）</li>
+                <li>王兰（硕士生，发展心理学）</li>
+                <li>陈涛（硕士生，社会心理学）</li>
+                <li>王佳怡（实验助理）</li>
+            </ul>
+        </section>
+        <section id="admission">
+            <h3>招生信息</h3>
+            <p>
+                实验室欢迎认知、社会、临床、发展等方向的硕士及博士申请者加入。拥有良好的学术能力与科研兴趣，具备创新思维和团队协作精神者优先。具体招生章程及联系方式请参见学院年度招生简章，或通过邮箱 <a href="mailto:xmwu_lab@university.edu.cn">xmwu_lab@university.edu.cn</a> 咨询。
+            </p>
+        </section>
+    </main>
+
+    <script>
+        const links = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        function showSection(targetId) {
+            // 隐藏所有板块，移除 visible 类
+            sections.forEach(sec => {
+                sec.classList.remove('visible');
+                sec.style.animation = 'none';
+            });
+
+            // 更新导航高亮
+            links.forEach(link => link.classList.remove('active'));
+
+            // 显示目标板块，触发淡入动画
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.style.animation = '';
+                target.classList.add('visible');
+            }
+
+            // 高亮对应导航项
+            const activeLink = document.querySelector('.nav-link[data-target="' + targetId + '"]');
+            if (activeLink) activeLink.classList.add('active');
+        }
+
+        // 点击导航链接切换板块，阻止默认锚点跳转
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                showSection(targetId);
+            });
+        });
+
+        // 默认显示"实验室概况"
+        showSection('overview');
+    </script>
+</body>
+</html>
