@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -353,6 +353,97 @@
                 padding-top: 20px !important;
             }
         }
+
+        /* 1. 精致化品牌卡片容器 (电脑端大屏幕方案) */
+        @media (min-width: 768px) {
+            #overview .overview-logo-card {
+                width: 350px !important;
+                margin: 30px auto !important;
+                background: #ffffff !important;
+                padding: 20px !important;
+                border-radius: 8px !important;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+                display: block !important;
+            }
+        }
+
+        /* 2. 图片本体适配：让图片乖乖呆在盒子里面 */
+        #overview .overview-logo-card img {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block !important;
+            border-radius: 4px !important;
+        }
+
+        /* ===== LAB EQUIPMENT CAROUSEL (independent) ===== */
+        #lab-equipment-carousel {
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto 32px auto; /* 与上方“实验室设备”标题保持 20px 间距 */
+            position: relative;
+            height: 400px; /* 电脑端固定高度 */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            background: #fff;
+            user-select: none;
+        }
+
+        #lab-equipment-carousel .lab-equipment-track {
+            height: 100%;
+            display: flex;
+            transition: transform 0.45s cubic-bezier(.4,0,.2,1);
+            will-change: transform;
+        }
+
+        #lab-equipment-carousel .lab-equipment-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lab-equipment-carousel .lab-equipment-slide img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover; /* 强制填满容器且不拉伸 */
+            display: block;
+        }
+
+        #lab-equipment-carousel .lab-equipment-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.35);
+            color: #fff;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            backdrop-filter: blur(2px);
+        }
+        #lab-equipment-carousel .lab-equipment-btn:hover {
+            background: rgba(0,51,102,0.65);
+        }
+        #lab-equipment-carousel .lab-equipment-btn.prev { left: 12px; }
+        #lab-equipment-carousel .lab-equipment-btn.next { right: 12px; }
+
+        @media (max-width: 768px) {
+            #lab-equipment-carousel { height: 260px; }
+            #lab-equipment-carousel .lab-equipment-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -394,6 +485,9 @@
 
         <section id="overview">
             <h3>实验室概况</h3>
+            <div class="overview-logo-card">
+                <img src="logo1.jpg" alt="实验室Logo">
+            </div>
             <h4>名称</h4>
             <p>Occupational Health Psychology</p>
             <h4>研究方向</h4>
@@ -411,6 +505,28 @@
             <p>（待补充）</p>
             <h4>实验室设备</h4>
             <p>（待补充）</p>
+
+            <div id="lab-equipment-carousel" aria-label="实验室设备轮播图">
+                <div class="lab-equipment-track" id="labEquipmentTrack">
+                    <div class="lab-equipment-slide">
+                        <img src="SLAB1.jpg" alt="实验室设备图片1">
+                    </div>
+                    <div class="lab-equipment-slide">
+                        <img src="SLAB2.jpg" alt="实验室设备图片2">
+                    </div>
+                    <div class="lab-equipment-slide">
+                        <img src="SLAB3.jpg" alt="实验室设备图片3">
+                    </div>
+                    <div class="lab-equipment-slide">
+                        <img src="SLAB4.jpg" alt="实验室设备图片4">
+                    </div>
+                    <div class="lab-equipment-slide">
+                        <img src="SLAB5.jpg" alt="实验室设备图片5">
+                    </div>
+                </div>
+                <button type="button" class="lab-equipment-btn prev" id="labEquipmentPrev" aria-label="上一张">&#8249;</button>
+                <button type="button" class="lab-equipment-btn next" id="labEquipmentNext" aria-label="下一张">&#8250;</button>
+            </div>
         </section>
 
         <section id="advisor">
@@ -722,6 +838,71 @@
 
                 startAuto();
             }
+        })();
+
+        // ===== LAB EQUIPMENT CAROUSEL =====
+        (function() {
+            const carousel = document.getElementById('lab-equipment-carousel');
+            const track = document.getElementById('labEquipmentTrack');
+            const prevBtn = document.getElementById('labEquipmentPrev');
+            const nextBtn = document.getElementById('labEquipmentNext');
+            if (!carousel || !track) return;
+
+            const total = track.children.length;
+            let current = 0;
+            let timer = null;
+            let startX = 0;
+            let isDragging = false;
+
+            function goTo(idx) {
+                current = (idx + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            }
+
+            function stopAuto() {
+                if (timer) clearInterval(timer);
+                timer = null;
+            }
+
+            function startAuto() {
+                stopAuto();
+                timer = setInterval(() => goTo(current + 1), 4500);
+            }
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    goTo(current - 1);
+                    startAuto();
+                });
+                nextBtn.addEventListener('click', () => {
+                    goTo(current + 1);
+                    startAuto();
+                });
+            }
+
+            // Touch swipe
+            track.addEventListener('touchstart', (e) => {
+                if (!e.touches || !e.touches.length) return;
+                startX = e.touches[0].clientX;
+                isDragging = true;
+                stopAuto();
+            }, { passive: true });
+
+            track.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                const touch = e.changedTouches && e.changedTouches[0];
+                if (!touch) return;
+                const diff = startX - touch.clientX;
+                if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+                isDragging = false;
+                startAuto();
+            }, { passive: true });
+
+            // Pause on hover
+            carousel.addEventListener('mouseenter', stopAuto);
+            carousel.addEventListener('mouseleave', startAuto);
+
+            startAuto();
         })();
     </script>
 </body>
