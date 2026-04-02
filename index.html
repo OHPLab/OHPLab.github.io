@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -134,6 +134,33 @@
             margin: 0 0 14px 0;
         }
 
+        /* ===== INFO BOX (for positioning and goals) ===== */
+        .info-box {
+            border: 1px solid #c8d8ea;
+            border-radius: 8px;
+            padding: 20px 24px;
+            background: #f7fafd;
+            margin-bottom: 20px;
+        }
+        .info-box-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #003366;
+            margin: 0 0 12px 0;
+        }
+        .info-box p {
+            margin: 0;
+            line-height: 1.8;
+        }
+        .info-box ul {
+            margin: 0;
+            padding-left: 1.4em;
+        }
+        .info-box li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
 
         /* ===== CAROUSEL ===== */
         .carousel {
@@ -142,7 +169,7 @@
             max-width: 900px;
             margin: 0 auto 32px auto;
             border-radius: 10px;
-            background: #000;
+            background: transparent;
             user-select: none;
             height: 450px !important;
             overflow: hidden;
@@ -491,7 +518,8 @@
             <h4>名称</h4>
             <p>Occupational Health Psychology</p>
             <h4>研究方向</h4>
-            <ul>
+            <div class="info-box">
+                <ul>
                 <li>职业疲劳 &mdash; Occupational Fatigue</li>
                 <li>精神工作量 &mdash; Mental Workload</li>
                 <li>认知绩效 &mdash; Cognitive Performance</li>
@@ -501,10 +529,28 @@
                 <li>音乐治疗 &mdash; Music Therapy</li>
                 <li>轨道交通领域人因问题 &mdash; Human Factors in Railway Industry</li>
             </ul>
+            </div>
             <h4>定位 / 发展目标</h4>
-            <p>（待补充）</p>
+            <div class="info-box">
+                <p class="info-box-title">【定位】</p>
+                <p>我们的定位是"职业健康的守护者，人因科技的创新者"。以人因安全与身心福祉为核心，致力于探究职业环境下人类心理与生理功能的交互机制。我们专注于职业疲劳的生成机理及其对认知绩效的影响，通过整合心理学理论与多模态评估技术，构建从风险预测到精准干预（如音乐治疗、物理技术干预）的全链条研究体系，旨在提升高风险行业（如轨道交通、核电）从业者的职业健康水平。</p>
+            </div>
+            <div class="info-box">
+                <p class="info-box-title">【发展目标】</p>
+                <ul>
+                    <li><strong>打造一流的职业健康心理学研究高地：</strong>深耕职业疲劳、睡眠质量与认知表现领域，在国际顶级期刊持续产出高质量研究成果，提升学术影响力。</li>
+                    <li><strong>推动复杂系统下的人因技术转化：</strong>结合数字化控制室与轨道交通实战需求，开发基于多模态数据的绩效评估系统，为国家重大行业安全提供科学支撑。</li>
+                    <li><strong>探索艺术与科技融合的干预新模式：</strong>深化表达性艺术治疗与清醒梦诱发技术的研究，将心理干预从临床延伸至职场与教育领域，提供系统化的身心调节方案。</li>
+                    <li><strong>培养复合型应用心理学人才：</strong>依托"案例式+体验式"教学改革项目，培养具备扎实研究能力且能解决复杂行业实际问题的复合型专家。</li>
+                </ul>
+            </div>
             <h4>实验室设备</h4>
-            <p>（待补充）</p>
+            <ul>
+                <li>PSG</li>
+                <li>actigraph wgt3x-bt加速度计</li>
+                <li>B & K 2245声级计</li>
+                <li>tobii pro眼动仪</li>
+            </ul>
 
             <div id="lab-equipment-carousel" aria-label="实验室设备轮播图">
                 <div class="lab-equipment-track" id="labEquipmentTrack">
@@ -530,62 +576,130 @@
         </section>
 
         <section id="advisor">
+            <!-- Advisor Photo Carousel -->
+            <div class="carousel" id="advisorCarousel">
+                <div class="carousel-track" id="advisorCarouselTrack">
+                    <div class="carousel-slide">
+                        <img src="mentor1.jpg" alt="导师照片1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="mentor2.jpg" alt="导师照片2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="mentor3.jpg" alt="导师照片3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="mentor4.jpg" alt="导师照片4">
+                    </div>
+                </div>
+                <button class="carousel-btn prev" id="advisorCarouselPrev" aria-label="上一张">&#8249;</button>
+                <button class="carousel-btn next" id="advisorCarouselNext" aria-label="下一张">&#8250;</button>
+                <div class="carousel-indicators" id="advisorCarouselDots">
+                    <button class="carousel-dot active" data-index="0"></button>
+                    <button class="carousel-dot" data-index="1"></button>
+                    <button class="carousel-dot" data-index="2"></button>
+                    <button class="carousel-dot" data-index="3"></button>
+                </div>
+            </div>
             <h3>导师简介</h3>
+            <div class="info-box">
             <p>
                 <strong>范家琳</strong>，深圳市海外高层次人才，深圳市中西医结合学会神经精神专委会委员，深圳市人文社科研究重点基地深圳大学心理健康研究中心成员，职业与健康心理 OHPsych 课题组 PI，英国职业与健康心理研究中心成员、英国计算机学会会员、英国心理学会会员、中国人类工效学会会员、中国心理学会会员。2014 年 7 月于英国约克大学计算机学院获「以人为中心的交互技术」硕士学位，师从 Alistair Edward 教授、Paul Cairns 教授；2019 年 4 月于英国卡迪夫大学心理学院获博士学位，师从 Andrew P. Smith 教授。
             </p>
             <p>
                 研究领域主要为职业与健康心理学，研究职业因素对健康、睡眠和工作效率影响，涉及调查安全相关风险因素，探究生活方式和健康状况对认知表现、情绪、睡眠和生理功能的影响，并对清醒梦研究有兴趣。担任 SCI/SSCI 期刊 <i>Applied Ergonomics</i>、<i>Fatigue Biomedicine Health &amp; Behavior</i>、<i>Work</i>、<i>Mindfulness</i> 等的审稿人。在国内外重要期刊以及国际会议上发表 SCI/SSCI/EI 检索论文二十余篇，其中，被引数 150+ 的论文 1 篇。
             </p>
+            </div>
             <h4>主要荣誉</h4>
-            <ul>
+            <div class="info-box">
+                <ul>
                 <li>2013年&nbsp; 英国约克大学 Langwith 学院奖</li>
                 <li>2017年&nbsp; 第一届精神工作量国际会议 优秀论文奖</li>
                 <li>2019年&nbsp; 深圳市人社局 海外高层次人才 C 类</li>
                 <li>2022年&nbsp; 深圳大学 &amp; 腾讯基金会 腾讯益友奖</li>
             </ul>
+            </div>
+
+            <!-- Advisor Honors Carousel -->
+            <div class="carousel" id="advisorHonorsCarousel">
+                <div class="carousel-track" id="advisorHonorsCarouselTrack">
+                    <div class="carousel-slide">
+                        <img src="mentor5.jpg" alt="导师照片5">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="mentor6.jpg" alt="导师照片6">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="mentor7.jpg" alt="导师照片7">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="mentor8.jpg" alt="导师照片8">
+                    </div>
+                </div>
+                <button class="carousel-btn prev" id="advisorHonorsCarouselPrev" aria-label="上一张">&#8249;</button>
+                <button class="carousel-btn next" id="advisorHonorsCarouselNext" aria-label="下一张">&#8250;</button>
+                <div class="carousel-indicators" id="advisorHonorsCarouselDots">
+                    <button class="carousel-dot active" data-index="0"></button>
+                    <button class="carousel-dot" data-index="1"></button>
+                    <button class="carousel-dot" data-index="2"></button>
+                    <button class="carousel-dot" data-index="3"></button>
+                </div>
+            </div>
+
             <h4>社会工作</h4>
-            <ul>
+            <div class="info-box">
+                <ul>
                 <li>广东省预防医学会健康促进与教育专业委员</li>
                 <li>深圳市中西医结合学会神经精神专委会委员</li>
                 <li>深圳市人文社科研究重点基地深圳大学心理健康研究中心成员</li>
                 <li>中国人类工效学会会员</li>
                 <li>中国心理学会会员</li>
             </ul>
+            </div>
             <h4>教学工作 <small style="font-weight:normal;color:#555;">（* 为创新短课）</small></h4>
-            <ul>
+            <div class="info-box">
+                <ul>
                 <li><strong>上半学期：</strong>《职业心理学》、《疲劳管理策略*》、《心理统计学（2）》、《心理学学术报告技巧》</li>
                 <li><strong>下半学期：</strong>《职业生涯发展与咨询》、《设计心理学》、《疲劳管理策略*》</li>
                 <li><strong>研究生课程：</strong>《高级心理测量》、《心理测量与评估》、《应用心理学专题》等</li>
             </ul>
+            </div>
             <h4>联系方式</h4>
-            <ul>
+            <div class="info-box">
+                <ul>
                 <li>E-mail：<a href="mailto:FanJL@szu.edu.cn">FanJL@szu.edu.cn</a></li>
                 <li>办公电话：0755-86581067</li>
                 <li>办公地点：深圳大学沧海校区致理楼 L3-12 楼</li>
             </ul>
+            </div>
         </section>
 
         <section id="projects">
             <h3>正在主持/参与的科研项目</h3>
             <h4>纵向项目</h4>
-            <ol>
+            <div class="info-box">
+                <ol>
                 <li>职业疲劳对注意控制的影响及预测模型研究（2024—2027年，广东省基础与应用基础研究基金青年项目，<strong>主持</strong>）</li>
                                 <li>表达性艺术治疗对大学生情绪调适的干预作用研究（2023—2026年，深圳市教育科学「十四五」规划2023年度课题，<strong>主持</strong>）</li>
                 <li>负性情绪影响推理过程的认知机制及干预研究（2024—2027年，教育部人文社科青年项目，<strong>参与</strong>）</li>
                 <li>预防人误：职业疲劳及其后效应（2020—2025年，深圳市高端人才启动项目，<strong>主持</strong>）</li>
                 <li>轨道交通行业职工的职业疲劳与福祉（2020—2023年，深圳大学科研启动项目，<strong>主持</strong>）</li>
             </ol>
+            </div>
             <h4>横向项目</h4>
-            <ol>
+            <div class="info-box">
+                <ol>
                 <li>基于光热的清醒梦诱发技术（2023—2028年，横向技术开发合作项目，<strong>主持</strong>）</li>
                 <li>数字化控制室操纵员绩效多模态智能评估技术研究（2023—2026年，中核领创项目，<strong>参与</strong>）</li>
             </ol>
+            </div>
             <h4>教学改革项目</h4>
-            <ol>
+            <div class="info-box">
+                <ol>
                 <li>整合「案例式+体验式」教学的心理剧本杀在《职业心理学》教学中的应用（2024—2026年，深圳大学教学改革项目，<strong>主持</strong>）</li>
                 <li>基于职业健康心理学的HSE管理对海洋生物工程员工心理健康及企业绩效的提升作用研究（2024—2026年，教育部供需对接就业育人项目，<strong>主持</strong>）</li>
             </ol>
+            </div>
         </section>
 
         <section id="publications">
@@ -904,6 +1018,89 @@
 
             startAuto();
         })();
+
+        // ===== ADVISOR CAROUSEL =====
+        (function() {
+            const track = document.getElementById('advisorCarouselTrack');
+            const dots = document.querySelectorAll('#advisorCarouselDots .carousel-dot');
+            const total = track ? track.children.length : 0;
+            let current = 0, timer = null, startX = 0, isDragging = false;
+
+            function goTo(idx) {
+                current = (idx + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            }
+
+            function startAuto() {
+                stopAuto();
+                timer = setInterval(() => goTo(current + 1), 5000);
+            }
+            function stopAuto() { clearInterval(timer); }
+
+            if (track) {
+                document.getElementById('advisorCarouselPrev').addEventListener('click', () => { goTo(current - 1); startAuto(); });
+                document.getElementById('advisorCarouselNext').addEventListener('click', () => { goTo(current + 1); startAuto(); });
+                dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); startAuto(); }));
+
+                // Touch swipe
+                track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; stopAuto(); }, {passive:true});
+                track.addEventListener('touchend', e => {
+                    if (!isDragging) return;
+                    const diff = startX - e.changedTouches[0].clientX;
+                    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+                    isDragging = false; startAuto();
+                }, {passive:true});
+
+                // Pause on hover
+                document.getElementById('advisorCarousel').addEventListener('mouseenter', stopAuto);
+                document.getElementById('advisorCarousel').addEventListener('mouseleave', startAuto);
+
+                startAuto();
+            }
+        })();
+
+        // ===== ADVISOR HONORS CAROUSEL =====
+        (function() {
+            const track = document.getElementById('advisorHonorsCarouselTrack');
+            const dots = document.querySelectorAll('#advisorHonorsCarouselDots .carousel-dot');
+            const total = track ? track.children.length : 0;
+            let current = 0, timer = null, startX = 0, isDragging = false;
+
+            function goTo(idx) {
+                current = (idx + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            }
+
+            function startAuto() {
+                stopAuto();
+                timer = setInterval(() => goTo(current + 1), 5000);
+            }
+            function stopAuto() { clearInterval(timer); }
+
+            if (track) {
+                document.getElementById('advisorHonorsCarouselPrev').addEventListener('click', () => { goTo(current - 1); startAuto(); });
+                document.getElementById('advisorHonorsCarouselNext').addEventListener('click', () => { goTo(current + 1); startAuto(); });
+                dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); startAuto(); }));
+
+                // Touch swipe
+                track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; stopAuto(); }, {passive:true});
+                track.addEventListener('touchend', e => {
+                    if (!isDragging) return;
+                    const diff = startX - e.changedTouches[0].clientX;
+                    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+                    isDragging = false; startAuto();
+                }, {passive:true});
+
+                // Pause on hover
+                document.getElementById('advisorHonorsCarousel').addEventListener('mouseenter', stopAuto);
+                document.getElementById('advisorHonorsCarousel').addEventListener('mouseleave', startAuto);
+
+                startAuto();
+            }
+        })();
     </script>
 </body>
 </html>
+
