@@ -513,16 +513,12 @@
         <section id="overview">
             <h3>实验室概况</h3>
             <div class="overview-logo-card">
-                <picture>
-                    <source srcset="images_compressed/logo1.webp" type="image/webp">
-                    <img src="logo1.jpg" alt="实验室Logo" loading="lazy" width="200" height="200">
-                </picture>
+                <img src="logo1.jpg" alt="实验室Logo">
             </div>
             <h4>名称</h4>
             <p>Occupational Health Psychology</p>
             <h4>研究方向</h4>
-            <div class="info-box">
-                <ul>
+            <ul>
                 <li>职业疲劳 &mdash; Occupational Fatigue</li>
                 <li>精神工作量 &mdash; Mental Workload</li>
                 <li>认知绩效 &mdash; Cognitive Performance</li>
@@ -532,7 +528,6 @@
                 <li>音乐治疗 &mdash; Music Therapy</li>
                 <li>轨道交通领域人因问题 &mdash; Human Factors in Railway Industry</li>
             </ul>
-            </div>
             <h4>定位 / 发展目标</h4>
             <div class="info-box">
                 <p class="info-box-title">【定位】</p>
@@ -558,34 +553,19 @@
             <div id="lab-equipment-carousel" aria-label="实验室设备轮播图">
                 <div class="lab-equipment-track" id="labEquipmentTrack">
                     <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB1.webp" type="image/webp">
-                            <img src="SLAB1.jpg" alt="实验室设备图片1" loading="lazy" width="800" height="600">
-                        </picture>
+                        <img src="SLAB1.jpg" alt="实验室设备图片1">
                     </div>
                     <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB2.webp" type="image/webp">
-                            <img src="SLAB2.jpg" alt="实验室设备图片2" loading="lazy" width="800" height="600">
-                        </picture>
+                        <img src="SLAB2.jpg" alt="实验室设备图片2">
                     </div>
                     <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB3.webp" type="image/webp">
-                            <img src="SLAB3.jpg" alt="实验室设备图片3" loading="lazy" width="800" height="600">
-                        </picture>
+                        <img src="SLAB3.jpg" alt="实验室设备图片3">
                     </div>
                     <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB4.webp" type="image/webp">
-                            <img src="SLAB4.jpg" alt="实验室设备图片4" loading="lazy" width="800" height="600">
-                        </picture>
+                        <img src="SLAB4.jpg" alt="实验室设备图片4">
                     </div>
                     <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB5.webp" type="image/webp">
-                            <img src="SLAB5.jpg" alt="实验室设备图片5" loading="lazy" width="800" height="600">
-                        </picture>
+                        <img src="SLAB5.jpg" alt="实验室设备图片5">
                     </div>
                 </div>
                 <button type="button" class="lab-equipment-btn prev" id="labEquipmentPrev" aria-label="上一张">&#8249;</button>
@@ -598,28 +578,16 @@
             <div class="carousel" id="advisorCarousel">
                 <div class="carousel-track" id="advisorCarouselTrack">
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor1.webp" type="image/webp">
-                            <img src="mentor1.jpg" alt="导师照片1" loading="lazy" width="400" height="533">
-                        </picture>
+                        <img src="mentor1.jpg" alt="导师照片1">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor2.webp" type="image/webp">
-                            <img src="mentor2.jpg" alt="导师照片2" loading="lazy" width="400" height="600">
-                        </picture>
+                        <img src="mentor2.jpg" alt="导师照片2">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor3.webp" type="image/webp">
-                            <img src="mentor3.jpg" alt="导师照片3" loading="lazy" width="400" height="266">
-                        </picture>
+                        <img src="mentor3.jpg" alt="导师照片3">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor4.webp" type="image/webp">
-                            <img src="mentor4.jpg" alt="导师照片4" loading="lazy" width="400" height="280">
-                        </picture>
+                        <img src="mentor4.jpg" alt="导师照片4">
                     </div>
                 </div>
                 <button class="carousel-btn prev" id="advisorCarouselPrev" aria-label="上一张">&#8249;</button>
@@ -632,50 +600,34 @@
                 </div>
             </div>
             <h3>导师简介</h3>
-            <div class="info-box">
             <p>
                 <strong>范家琳</strong>，深圳市海外高层次人才，深圳市中西医结合学会神经精神专委会委员，深圳市人文社科研究重点基地深圳大学心理健康研究中心成员，职业与健康心理 OHPsych 课题组 PI，英国职业与健康心理研究中心成员、英国计算机学会会员、英国心理学会会员、中国人类工效学会会员、中国心理学会会员。2014 年 7 月于英国约克大学计算机学院获「以人为中心的交互技术」硕士学位，师从 Alistair Edward 教授、Paul Cairns 教授；2019 年 4 月于英国卡迪夫大学心理学院获博士学位，师从 Andrew P. Smith 教授。
             </p>
             <p>
                 研究领域主要为职业与健康心理学，研究职业因素对健康、睡眠和工作效率影响，涉及调查安全相关风险因素，探究生活方式和健康状况对认知表现、情绪、睡眠和生理功能的影响，并对清醒梦研究有兴趣。担任 SCI/SSCI 期刊 <i>Applied Ergonomics</i>、<i>Fatigue Biomedicine Health &amp; Behavior</i>、<i>Work</i>、<i>Mindfulness</i> 等的审稿人。在国内外重要期刊以及国际会议上发表 SCI/SSCI/EI 检索论文二十余篇，其中，被引数 150+ 的论文 1 篇。
             </p>
-            </div>
             <h4>主要荣誉</h4>
-            <div class="info-box">
-                <ul>
+            <ul>
                 <li>2013年&nbsp; 英国约克大学 Langwith 学院奖</li>
                 <li>2017年&nbsp; 第一届精神工作量国际会议 优秀论文奖</li>
                 <li>2019年&nbsp; 深圳市人社局 海外高层次人才 C 类</li>
                 <li>2022年&nbsp; 深圳大学 &amp; 腾讯基金会 腾讯益友奖</li>
             </ul>
-            </div>
 
             <!-- Advisor Honors Carousel -->
             <div class="carousel" id="advisorHonorsCarousel">
                 <div class="carousel-track" id="advisorHonorsCarouselTrack">
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor5.webp" type="image/webp">
-                            <img src="mentor5.jpg" alt="导师照片5" loading="lazy" width="400" height="533">
-                        </picture>
+                        <img src="mentor5.jpg" alt="导师照片5">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor6.webp" type="image/webp">
-                            <img src="mentor6.jpg" alt="导师照片6" loading="lazy" width="400" height="533">
-                        </picture>
+                        <img src="mentor6.jpg" alt="导师照片6">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor7.webp" type="image/webp">
-                            <img src="mentor7.jpg" alt="导师照片7" loading="lazy" width="400" height="266">
-                        </picture>
+                        <img src="mentor7.jpg" alt="导师照片7">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor8.webp" type="image/webp">
-                            <img src="mentor8.jpg" alt="导师照片8" loading="lazy" width="400" height="171">
-                        </picture>
+                        <img src="mentor8.jpg" alt="导师照片8">
                     </div>
                 </div>
                 <button class="carousel-btn prev" id="advisorHonorsCarouselPrev" aria-label="上一张">&#8249;</button>
@@ -689,59 +641,47 @@
             </div>
 
             <h4>社会工作</h4>
-            <div class="info-box">
-                <ul>
+            <ul>
                 <li>广东省预防医学会健康促进与教育专业委员</li>
                 <li>深圳市中西医结合学会神经精神专委会委员</li>
                 <li>深圳市人文社科研究重点基地深圳大学心理健康研究中心成员</li>
                 <li>中国人类工效学会会员</li>
                 <li>中国心理学会会员</li>
             </ul>
-            </div>
             <h4>教学工作 <small style="font-weight:normal;color:#555;">（* 为创新短课）</small></h4>
-            <div class="info-box">
-                <ul>
+            <ul>
                 <li><strong>上半学期：</strong>《职业心理学》、《疲劳管理策略*》、《心理统计学（2）》、《心理学学术报告技巧》</li>
                 <li><strong>下半学期：</strong>《职业生涯发展与咨询》、《设计心理学》、《疲劳管理策略*》</li>
                 <li><strong>研究生课程：</strong>《高级心理测量》、《心理测量与评估》、《应用心理学专题》等</li>
             </ul>
-            </div>
             <h4>联系方式</h4>
-            <div class="info-box">
-                <ul>
+            <ul>
                 <li>E-mail：<a href="mailto:FanJL@szu.edu.cn">FanJL@szu.edu.cn</a></li>
                 <li>办公电话：0755-86581067</li>
                 <li>办公地点：深圳大学沧海校区致理楼 L3-12 楼</li>
             </ul>
-            </div>
         </section>
 
         <section id="projects">
             <h3>正在主持/参与的科研项目</h3>
             <h4>纵向项目</h4>
-            <div class="info-box">
-                <ol>
+            <ol>
                 <li>职业疲劳对注意控制的影响及预测模型研究（2024—2027年，广东省基础与应用基础研究基金青年项目，<strong>主持</strong>）</li>
                                 <li>表达性艺术治疗对大学生情绪调适的干预作用研究（2023—2026年，深圳市教育科学「十四五」规划2023年度课题，<strong>主持</strong>）</li>
                 <li>负性情绪影响推理过程的认知机制及干预研究（2024—2027年，教育部人文社科青年项目，<strong>参与</strong>）</li>
                 <li>预防人误：职业疲劳及其后效应（2020—2025年，深圳市高端人才启动项目，<strong>主持</strong>）</li>
                 <li>轨道交通行业职工的职业疲劳与福祉（2020—2023年，深圳大学科研启动项目，<strong>主持</strong>）</li>
             </ol>
-            </div>
             <h4>横向项目</h4>
-            <div class="info-box">
-                <ol>
+            <ol>
                 <li>基于光热的清醒梦诱发技术（2023—2028年，横向技术开发合作项目，<strong>主持</strong>）</li>
                 <li>数字化控制室操纵员绩效多模态智能评估技术研究（2023—2026年，中核领创项目，<strong>参与</strong>）</li>
             </ol>
-            </div>
             <h4>教学改革项目</h4>
-            <div class="info-box">
-                <ol>
+            <ol>
                 <li>整合「案例式+体验式」教学的心理剧本杀在《职业心理学》教学中的应用（2024—2026年，深圳大学教学改革项目，<strong>主持</strong>）</li>
                 <li>基于职业健康心理学的HSE管理对海洋生物工程员工心理健康及企业绩效的提升作用研究（2024—2026年，教育部供需对接就业育人项目，<strong>主持</strong>）</li>
             </ol>
-            </div>
         </section>
 
         <section id="publications">
@@ -774,52 +714,28 @@
             <div class="carousel" id="memberCarousel">
                 <div class="carousel-track" id="carouselTrack">
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/lab1.webp" type="image/webp">
-                            <img src="lab1.jpg" alt="课题组照片1" loading="lazy" width="1200" height="900">
-                        </picture>
+                        <img src="lab1.jpg" alt="课题组照片1">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/lab2.webp" type="image/webp">
-                            <img src="lab2.jpg" alt="课题组照片2" loading="lazy" width="1200" height="1600">
-                        </picture>
+                        <img src="lab2.jpg" alt="课题组照片2">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/lab3.webp" type="image/webp">
-                            <img src="lab3.jpg" alt="课题组照片3" loading="lazy" width="1200" height="900">
-                        </picture>
+                        <img src="lab3.jpg" alt="课题组照片3">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/lab4.webp" type="image/webp">
-                            <img src="lab4.jpg" alt="课题组照片4" loading="lazy" width="1200" height="1600">
-                        </picture>
+                        <img src="lab4.jpg" alt="课题组照片4">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/lab5.webp" type="image/webp">
-                            <img src="lab5.jpg" alt="课题组照片5" loading="lazy" width="1200" height="1600">
-                        </picture>
+                        <img src="lab5.jpg" alt="课题组照片5">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/lab6.webp" type="image/webp">
-                            <img src="lab6.jpg" alt="课题组照片6" loading="lazy" width="1200" height="1600">
-                        </picture>
+                        <img src="lab6.jpg" alt="课题组照片6">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/lab7.webp" type="image/webp">
-                            <img src="lab7.jpg" alt="课题组照片7" loading="lazy" width="1200" height="900">
-                        </picture>
+                        <img src="lab7.jpg" alt="课题组照片7">
                     </div>
                     <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/lab8.webp" type="image/webp">
-                            <img src="lab8.jpg" alt="课题组照片8" loading="lazy" width="1200" height="1600">
-                        </picture>
+                        <img src="lab8.jpg" alt="课题组照片8">
                     </div>
                 </div>
                 <button class="carousel-btn prev" id="carouselPrev" aria-label="上一张">&#8249;</button>
