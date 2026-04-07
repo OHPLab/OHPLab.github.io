@@ -4,82 +4,113 @@
     <meta charset="UTF-8">
     <title>Occupational Health Psychology</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; }
 
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: "Helvetica Neue", Helvetica, Arial, "思源黑体", "微软雅黑", sans-serif;
+            min-height: 100%;
+            font-family: "Inter", "Helvetica Neue", Helvetica, Arial, "思源黑体", "微软雅黑", sans-serif;
             background: #fff;
             color: #111;
         }
 
         img { max-width: 100%; height: auto; display: block; }
 
-        /* ===== DESKTOP SIDEBAR ===== */
-        .sidebar {
-            width: 250px;
-            background: #003366;
-            color: #fff;
-            min-height: 100vh;
-            position: fixed;
-            left: 0;
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            background: url('hero.png') center center / cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
             top: 0;
-            display: flex;
-            flex-direction: column;
-            padding-top: 40px;
-            box-shadow: 2px 0 8px rgba(0,0,0,0.08);
-            z-index: 100;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            pointer-events: none;
         }
-        .sidebar h2 {
-            color: #fff;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 40px;
-            font-weight: 600;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            padding: 0 12px;
+
+
+
+        /* ===== NAVIGATION BAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            border-bottom: 1px solid #e8e8e8;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
         }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
         .nav-list {
             list-style: none;
             padding: 0;
             margin: 0;
-            flex: 1;
-        }
-        .nav-list li {
-            margin-bottom: 24px;
-        }
-        .nav-link {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.05rem;
-            display: block;
-            padding: 8px 32px;
-            border-left: 3px solid transparent;
-            transition: background 0.15s, border-color 0.15s;
-            cursor: pointer;
-        }
-        .nav-link:hover, .nav-link.active {
-            background: rgba(255,255,255,0.09);
-            border-left: 3px solid #fff;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
         }
 
-        /* ===== MOBILE TOP BAR (hidden on desktop) ===== */
+        .nav-list li {
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: block;
+            padding: 16px 14px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #003366;
+            border-bottom-color: #003366;
+            background: rgba(0,51,102,0.03);
+        }
+
+        /* ===== MOBILE NAVIGATION ===== */
         .mobile-topbar {
-            display: none;
+            display: none !important;
+        }
+
+        .mobile-nav {
+            display: none !important;
         }
 
         /* ===== MAIN CONTENT ===== */
         .main-content {
-            margin-left: 250px;
-            padding: 20px 40px 40px 40px;
-            width: calc(100% - 250px);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 40px 60px 40px;
+            background: #fff;
         }
-        main { display: block; margin: 0; padding: 0; }
 
+        main { display: block; margin: 0; padding: 0; }
 
         /* ===== SECTIONS ===== */
         section {
@@ -90,77 +121,91 @@
             opacity: 0;
             animation: fadeIn 0.35s ease forwards;
         }
+
         section.visible {
             display: block;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to   { opacity: 1; transform: translateY(0); }
         }
+
         section h3 {
-            font-size: 1.28rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             border-left: 4px solid #003366;
-            padding-left: 12px;
-            letter-spacing: 1px;
-        }
-        section h4 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin: 20px 0 8px 0;
+            padding-left: 16px;
+            letter-spacing: 0.5px;
             color: #003366;
         }
+
+        section h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 28px 0 12px 0;
+            color: #003366;
+        }
+
         p, li {
             line-height: 1.8;
             font-size: 1rem;
+            color: #444;
         }
+
         ol { padding-left: 1.4em; }
-        ol li { margin-bottom: 6px; }
+        ol li { margin-bottom: 8px; }
 
         /* ===== RECRUIT BOX ===== */
         .recruit-box {
-            border: 1px solid #c8d8ea;
-            border-radius: 8px;
-            padding: 20px 24px;
-            background: #f7fafd;
+            border: 1px solid #e0e8f0;
+            border-radius: 10px;
+            padding: 24px 28px;
+            background: #f8fafc;
             margin-bottom: 24px;
-        }
-        .recruit-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #003366;
-            margin: 0 0 14px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
-        /* ===== INFO BOX (for positioning and goals) ===== */
-        .info-box {
-            border: 1px solid #c8d8ea;
-            border-radius: 8px;
-            padding: 20px 24px;
-            background: #f7fafd;
-            margin-bottom: 20px;
+        .recruit-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #003366;
+            margin: 0 0 16px 0;
         }
+
+        /* ===== INFO BOX ===== */
+        .info-box {
+            border: 1px solid #e0e8f0;
+            border-radius: 10px;
+            padding: 24px 28px;
+            background: #f8fafc;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
         .info-box-title {
             font-weight: 700;
             font-size: 1.05rem;
             color: #003366;
             margin: 0 0 12px 0;
         }
+
         .info-box p {
             margin: 0;
             line-height: 1.8;
         }
+
         .info-box ul {
             margin: 0;
             padding-left: 1.4em;
         }
+
         .info-box li {
             margin-bottom: 10px;
             line-height: 1.7;
         }
-
 
         /* ===== CAROUSEL ===== */
         .carousel {
@@ -168,18 +213,21 @@
             width: 100%;
             max-width: 900px;
             margin: 0 auto 32px auto;
-            border-radius: 10px;
+            border-radius: 12px;
             background: transparent;
             user-select: none;
             height: 450px !important;
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
+
         .carousel-track {
             display: flex;
             transition: transform 0.45s cubic-bezier(.4,0,.2,1);
             will-change: transform;
             height: 100% !important;
         }
+
         .carousel-slide {
             min-width: 100%;
             flex-shrink: 0;
@@ -187,231 +235,122 @@
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
+            background: #f5f5f5;
         }
+
         .carousel-slide img {
             width: auto !important;
             max-width: 100% !important;
             height: 100% !important;
             object-fit: contain !important;
             display: block;
-            border-radius: 10px;
         }
+
         .carousel-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.35);
+            background: rgba(0,0,0,0.4);
             color: #fff;
             border: none;
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             cursor: pointer;
             z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s;
-            backdrop-filter: blur(2px);
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
         }
-        .carousel-btn:hover { background: rgba(0,51,102,0.65); }
-        .carousel-btn.prev { left: 12px; }
-        .carousel-btn.next { right: 12px; }
+
+        .carousel-btn:hover { 
+            background: rgba(0,51,102,0.8); 
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .carousel-btn.prev { left: 16px; }
+        .carousel-btn.next { right: 16px; }
+
         .carousel-indicators {
             position: absolute;
-            bottom: 12px;
+            bottom: 16px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 8px;
+            gap: 10px;
             z-index: 10;
         }
+
         .carousel-dot {
-            width: 9px;
-            height: 9px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: rgba(255,255,255,0.5);
             cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
+            transition: all 0.2s ease;
             border: none;
             padding: 0;
         }
+
         .carousel-dot.active {
             background: #fff;
-            transform: scale(1.25);
+            transform: scale(1.3);
         }
-        @media (max-width: 768px) {
-            .carousel-slide { height: 220px; }
-            .carousel-btn { width: 36px; height: 36px; font-size: 1rem; }
-        }
+
         /* ===== MEMBER CARDS ===== */
         .member-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
-            margin-top: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 16px;
         }
+
         .member-card {
-            border: 1px solid #e0e8f0;
-            border-radius: 8px;
-            padding: 16px 18px;
-            background: #f7fafd;
-            transition: box-shadow 0.15s;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            padding: 20px 22px;
+            background: #fff;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
+
         .member-card:hover {
-            box-shadow: 0 3px 12px rgba(0,51,102,0.10);
+            box-shadow: 0 8px 24px rgba(0,51,102,0.12);
+            transform: translateY(-2px);
         }
+
         .member-name {
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #003366;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
+
         .member-info {
             font-size: 0.95rem;
-            line-height: 1.65;
-            color: #333;
-            margin-bottom: 3px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 4px;
         }
+
         .member-label {
             font-weight: 600;
             color: #003366;
         }
-        ol li { margin-bottom: 6px; }
 
-        /* ===== MOBILE STYLES ===== */
-        @media (max-width: 768px) {
-            .sidebar { display: none; }
-            .mobile-topbar {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                background: #003366;
-                color: #fff;
-                position: fixed;
-                top: 0; left: 0; right: 0;
-                height: 56px;
-                padding: 0 16px;
-                z-index: 200;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-            }
-            .mobile-topbar .lab-title {
-                font-size: 1rem;
-                font-weight: 600;
-                letter-spacing: 0.5px;
-                color: #fff;
-                flex: 1;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                margin-right: 12px;
-            }
-            .hamburger-btn {
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 6px;
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                flex-shrink: 0;
-            }
-            .hamburger-btn span {
-                display: block;
-                width: 26px;
-                height: 2.5px;
-                background: #fff;
-                border-radius: 2px;
-                transition: transform 0.25s, opacity 0.25s;
-            }
-            .hamburger-btn.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-            .hamburger-btn.open span:nth-child(2) { opacity: 0; }
-            .hamburger-btn.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-            .mobile-nav {
-                display: none;
-                position: fixed;
-                top: 56px; left: 0; right: 0;
-                background: #003366;
-                z-index: 199;
-                box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-                padding: 8px 0 16px 0;
-            }
-            .mobile-nav.open { display: block; }
-            .mobile-nav .nav-list { display: flex; flex-direction: column; }
-            .mobile-nav .nav-list li { margin: 0; }
-            .mobile-nav .nav-link {
-                font-size: 1.05rem;
-                padding: 14px 24px;
-                border-left: 3px solid transparent;
-                border-bottom: none;
-            }
-            .mobile-nav .nav-link:hover,
-            .mobile-nav .nav-link.active {
-                background: rgba(255,255,255,0.1);
-                border-left: 3px solid #fff;
-            }
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-                padding: 16px 18px 32px 18px;
-            }
-            section h3 { font-size: 1.15rem; }
-            section h4 { font-size: 1rem; }
-            p, li { font-size: 0.97rem; line-height: 1.75; }
-        }
-        @media (max-width: 400px) {
-            .main-content { padding: 14px 12px 24px 12px; }
-            .mobile-topbar .lab-title { font-size: 0.88rem; }
-        }
-        /* 彻底解决桌面端移动导航栏占位导致的空白 */
-        @media (min-width: 768px) {
-            #mobile-nav, .mobile-topbar, .mobile-nav {
-                display: none !important;
-                visibility: hidden !important;
-                height: 0 !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                position: absolute;
-                pointer-events: none;
-            }
-            main, .content {
-                margin-top: 0 !important;
-                padding-top: 20px !important;
-            }
-        }
-
-        /* 1. 精致化品牌卡片容器 (电脑端大屏幕方案) */
-        @media (min-width: 768px) {
-            #overview .overview-logo-card {
-                width: 350px !important;
-                margin: 30px auto !important;
-                background: #ffffff !important;
-                padding: 20px !important;
-                border-radius: 8px !important;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
-                display: block !important;
-            }
-        }
-
-        /* 2. 图片本体适配：让图片乖乖呆在盒子里面 */
-        #overview .overview-logo-card img {
-            max-width: 100% !important;
-            height: auto !important;
-            display: block !important;
-            border-radius: 4px !important;
-        }
-
-        /* ===== LAB EQUIPMENT CAROUSEL (independent) ===== */
+        /* ===== LAB EQUIPMENT CAROUSEL ===== */
         #lab-equipment-carousel {
             width: 100%;
             max-width: 900px;
-            margin: 20px auto 32px auto; /* 与上方“实验室设备”标题保持 20px 间距 */
+            margin: 20px auto 32px auto;
             position: relative;
-            height: 400px; /* 电脑端固定高度 */
-            border-radius: 8px;
+            height: 400px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             background: #fff;
             user-select: none;
         }
@@ -429,12 +368,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: #f5f5f5;
         }
 
         #lab-equipment-carousel .lab-equipment-slide img {
             width: 100% !important;
             height: 100% !important;
-            object-fit: cover; /* 强制填满容器且不拉伸 */
+            object-fit: cover;
             display: block;
         }
 
@@ -442,50 +382,262 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.35);
+            background: rgba(0,0,0,0.4);
             color: #fff;
             border: none;
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             cursor: pointer;
             z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s;
-            backdrop-filter: blur(2px);
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
         }
-        #lab-equipment-carousel .lab-equipment-btn:hover {
-            background: rgba(0,51,102,0.65);
-        }
-        #lab-equipment-carousel .lab-equipment-btn.prev { left: 12px; }
-        #lab-equipment-carousel .lab-equipment-btn.next { right: 12px; }
 
+        #lab-equipment-carousel .lab-equipment-btn:hover {
+            background: rgba(0,51,102,0.8);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        #lab-equipment-carousel .lab-equipment-btn.prev { left: 16px; }
+        #lab-equipment-carousel .lab-equipment-btn.next { right: 16px; }
+
+        /* ===== ACHIEVEMENT CARDS ===== */
+        .achievement-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .achievement-card {
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 24px;
+            background: #fff;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .achievement-card:hover {
+            box-shadow: 0 8px 24px rgba(0,51,102,0.12);
+            transform: translateY(-2px);
+        }
+
+        .achievement-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #003366;
+            margin-bottom: 12px;
+        }
+
+        .achievement-member {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .achievement-desc {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .achievement-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+        }
+
+        /* ===== MOBILE STYLES ===== */
         @media (max-width: 768px) {
-            #lab-equipment-carousel { height: 260px; }
-            #lab-equipment-carousel .lab-equipment-btn {
-                width: 36px;
-                height: 36px;
+            .hero-section {
+                height: 280px;
+            }
+
+            .navbar {
+                display: none !important;
+            }
+
+            .mobile-topbar {
+                display: flex !important;
+                align-items: center;
+                justify-content: space-between;
+                background: #003366;
+                color: #fff;
+                position: fixed;
+                top: 0; left: 0; right: 0;
+                height: 56px;
+                padding: 0 16px;
+                z-index: 2000;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            }
+
+            .mobile-topbar .lab-title {
                 font-size: 1rem;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                color: #fff;
+                flex: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-right: 12px;
+            }
+
+            .hamburger-btn {
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 6px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                flex-shrink: 0;
+            }
+
+            .hamburger-btn span {
+                display: block;
+                width: 26px;
+                height: 2.5px;
+                background: #fff;
+                border-radius: 2px;
+                transition: transform 0.25s, opacity 0.25s;
+            }
+
+            .hamburger-btn.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+            .hamburger-btn.open span:nth-child(2) { opacity: 0; }
+            .hamburger-btn.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 56px; left: 0; right: 0;
+                background: #fff;
+                z-index: 1999;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+                padding: 8px 0 16px 0;
+                border-bottom: 1px solid #e8e8e8;
+            }
+
+            .mobile-nav {
+                display: none;
+            }
+
+            .mobile-nav.open { display: block !important; }
+
+            .mobile-nav .nav-list { 
+                display: flex; 
+                flex-direction: column; 
+            }
+
+            .mobile-nav .nav-list li { 
+                margin: 0; 
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .mobile-nav .nav-link {
+                font-size: 1rem;
+                padding: 14px 24px;
+                border-bottom: none;
+                color: #333;
+            }
+
+            .mobile-nav .nav-link:hover,
+            .mobile-nav .nav-link.active {
+                background: rgba(0,51,102,0.05);
+                color: #003366;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 20px 16px 40px 16px;
+                margin-top: 56px;
+            }
+
+            section h3 { 
+                font-size: 1.25rem; 
+                padding-left: 12px;
+            }
+
+            section h4 { 
+                font-size: 1.05rem; 
+            }
+
+            p, li { 
+                font-size: 0.95rem; 
+                line-height: 1.75; 
+            }
+
+            .carousel {
+                height: 280px !important;
+            }
+
+            .carousel-btn { 
+                width: 40px; 
+                height: 40px; 
+                font-size: 1.2rem; 
+            }
+
+            #lab-equipment-carousel { 
+                height: 240px; 
+            }
+
+            #lab-equipment-carousel .lab-equipment-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .member-list {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .main-content { 
+                padding: 16px 12px 32px 12px; 
+            }
+
+            .mobile-topbar .lab-title { 
+                font-size: 0.9rem; 
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Desktop sidebar -->
-    <nav class="sidebar" role="navigation">
-        <h2>Occupational Health Psychology</h2>
-        <ul class="nav-list" id="desktop-nav-list">
-            <li><a class="nav-link" href="#overview" data-target="overview">实验室概况</a></li>
-            <li><a class="nav-link" href="#advisor" data-target="advisor">导师简介</a></li>
-            <li><a class="nav-link" href="#projects" data-target="projects">科研项目</a></li>
-            <li><a class="nav-link" href="#publications" data-target="publications">论文发表</a></li>
-            <li><a class="nav-link" href="#members" data-target="members">现役成员</a></li>
-            <li><a class="nav-link" href="#admission" data-target="admission">招生信息</a></li>
-        </ul>
+    <!-- Hero Section -->
+    <header class="hero-section"></header>
+
+    <!-- Desktop Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-container">
+            <ul class="nav-list" id="desktop-nav-list">
+                <li><a class="nav-link" href="#overview" data-target="overview">实验室概况</a></li>
+                <li><a class="nav-link" href="#advisor" data-target="advisor">导师简介</a></li>
+                <li><a class="nav-link" href="#projects" data-target="projects">科研项目</a></li>
+                <li><a class="nav-link" href="#publications" data-target="publications">论文发表</a></li>
+                <li><a class="nav-link" href="#members" data-target="members">现役成员</a></li>
+                <li><a class="nav-link" href="#achievements" data-target="achievements">成员成果</a></li>
+                <li><a class="nav-link" href="#admission" data-target="admission">招生信息</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Mobile top bar -->
@@ -504,6 +656,7 @@
             <li><a class="nav-link" href="#projects" data-target="projects">科研项目</a></li>
             <li><a class="nav-link" href="#publications" data-target="publications">论文发表</a></li>
             <li><a class="nav-link" href="#members" data-target="members">现役成员</a></li>
+            <li><a class="nav-link" href="#achievements" data-target="achievements">成员成果</a></li>
             <li><a class="nav-link" href="#admission" data-target="admission">招生信息</a></li>
         </ul>
     </nav>
@@ -512,25 +665,16 @@
 
         <section id="overview">
             <h3>实验室概况</h3>
-            <div class="overview-logo-card">
-                <picture>
-                    <source srcset="images_compressed/logo1.webp" type="image/webp">
-                    <img src="logo1.jpg" alt="实验室Logo" loading="lazy" width="200" height="200">
-                </picture>
-            </div>
             <h4>名称</h4>
             <p>Occupational Health Psychology</p>
             <h4>研究方向</h4>
             <div class="info-box">
                 <ul>
-                <li>职业疲劳 &mdash; Occupational Fatigue</li>
-                <li>精神工作量 &mdash; Mental Workload</li>
-                <li>认知绩效 &mdash; Cognitive Performance</li>
-                <li>人类福祉 &mdash; Human Wellbeings</li>
-                <li>工作反刍 &mdash; Work-related Rumination</li>
-                <li>睡眠问题 &mdash; Sleep Problem</li>
-                <li>音乐治疗 &mdash; Music Therapy</li>
-                <li>轨道交通领域人因问题 &mdash; Human Factors in Railway Industry</li>
+                <li>职业疲劳Occupational Fatigue</li>
+                <li>认知绩效Cognitive Performance</li>
+                <li>睡眠与清醒梦Sleep and Lucid Dream</li>
+                <li>轨道交通领域人因问题Human Factors in Railway Industry</li>
+                <li>人工智能在职业健康心理领域的应用AI in Occupational Health Psychology</li>
             </ul>
             </div>
             <h4>定位 / 发展目标</h4>
@@ -858,7 +1002,49 @@
             </div>
         </section>
 
-                <section id="admission">
+        <section id="achievements">
+            <h3>成员成果</h3>
+            <div class="achievement-list">
+                <div class="achievement-card">
+                    <div class="achievement-title">全国高校心理学专业本科生创新创业论坛一等奖</div>
+                    <div class="achievement-member">获奖成员：余熙悦（队长）</div>
+                    <div class="achievement-desc">在2024年全国高校心理学专业本科生创新创业论坛心理学产品设计分论坛中荣获全国一等奖。</div>
+                    <div class="achievement-date">2024年</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">深圳航空文化创意IP设计大赛全国冠军</div>
+                    <div class="achievement-member">获奖成员：陈凯琳</div>
+                    <div class="achievement-desc">在深圳航空文化创意IP设计大赛中荣获全国第一名。</div>
+                    <div class="achievement-date">2024年</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">广东省心理学会优秀论文三等奖</div>
+                    <div class="achievement-member">获奖成员：肖睿涵</div>
+                    <div class="achievement-desc">在广东省心理学会优秀论文评选中荣获三等奖。</div>
+                    <div class="achievement-date">2024年</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">研究生一等学业奖学金</div>
+                    <div class="achievement-member">获奖成员：钟鸣蔚</div>
+                    <div class="achievement-desc">凭借优异的学业成绩和科研表现荣获研究生一等学业奖学金。</div>
+                    <div class="achievement-date">2024年</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">盐田区社会工作服务案例一等奖</div>
+                    <div class="achievement-member">获奖成员：张思娜</div>
+                    <div class="achievement-desc">在2024年盐田区社会工作服务案例评选中荣获一等奖。</div>
+                    <div class="achievement-date">2024年</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">腾讯音乐人原创歌手大赛深圳赛区五强</div>
+                    <div class="achievement-member">获奖成员：卢夏麦</div>
+                    <div class="achievement-desc">在2023年腾讯音乐人原创歌手大赛深圳赛区中成功晋级五强。</div>
+                    <div class="achievement-date">2023年</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="admission">
             <h3>招生信息</h3>
             <p>实验室欢迎认知、社会、临床、发展等方向的硕士及博士申请者加入。拥有良好的学术能力与科研兴趣，具备创新思维和团队协作精神者优先。具体招生章程及联系方式请参见学院年度招生简章，或通过邮箱 <a href="mailto:FanJL@szu.edu.cn">FanJL@szu.edu.cn</a> 咨询。</p>
 
@@ -1169,4 +1355,3 @@
     </script>
 </body>
 </html>
-
