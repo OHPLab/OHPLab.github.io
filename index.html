@@ -414,53 +414,94 @@
         #lab-equipment-carousel .lab-equipment-btn.prev { left: 16px; }
         #lab-equipment-carousel .lab-equipment-btn.next { right: 16px; }
 
-        /* ===== ACHIEVEMENT CARDS ===== */
-        .achievement-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 24px;
+        /* ===== MEMBERS ACHIEVEMENT SHOWCASE ===== */
+        .members-achievement {
             margin-top: 16px;
-        }
-
-        .achievement-card {
-            border: 1px solid #e8e8e8;
+            border: 1px solid #e0e8f0;
             border-radius: 12px;
-            padding: 24px;
             background: #fff;
-            transition: all 0.2s ease;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            overflow: hidden;
         }
 
-        .achievement-card:hover {
-            box-shadow: 0 8px 24px rgba(0,51,102,0.12);
-            transform: translateY(-2px);
+        .members-achievement-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+            gap: 0;
+            align-items: stretch;
         }
 
-        .achievement-title {
-            font-weight: 700;
-            font-size: 1.1rem;
+        .members-achievement-video {
+            background: #f5f7fa;
+            padding: 18px;
+            border-right: 1px solid #e8edf3;
+        }
+
+        .members-achievement-video video {
+            width: 100%;
+            max-height: 360px;
+            border-radius: 10px;
+            background: #000;
+            display: block;
+            object-fit: contain;
+        }
+
+        .members-achievement-info {
+            padding: 22px 24px;
+            background: #fbfdff;
+        }
+
+        .members-achievement-profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #edf1f6;
+        }
+
+        .members-achievement-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #d9e6f2;
+            flex-shrink: 0;
+        }
+
+        .members-achievement-name {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 600;
             color: #003366;
-            margin-bottom: 12px;
+            line-height: 1.4;
         }
 
-        .achievement-member {
+        .members-achievement-title {
+            margin: 0 0 10px 0;
+            font-size: 1.05rem;
+            line-height: 1.55;
+            color: #1c3556;
+            font-weight: 600;
+        }
+
+        .members-achievement-desc {
+            margin: 0;
             font-size: 0.95rem;
-            color: #666;
+            line-height: 1.75;
+            color: #44556a;
+        }
+
+        .members-achievement-desc ul {
+            margin: 10px 0 0 0;
+            padding-left: 1.15em;
+        }
+
+        .members-achievement-desc li {
             margin-bottom: 8px;
-        }
-
-        .achievement-desc {
-            font-size: 0.95rem;
             line-height: 1.7;
-            color: #555;
-        }
-
-        .achievement-date {
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid #eee;
+            color: #44556a;
+            font-size: 0.95rem;
         }
 
         /* ===== MOBILE STYLES ===== */
@@ -608,8 +649,22 @@
                 grid-template-columns: 1fr;
             }
 
-            .achievement-list {
+            .members-achievement-layout {
                 grid-template-columns: 1fr;
+            }
+
+            .members-achievement-video {
+                border-right: none;
+                border-bottom: 1px solid #e8edf3;
+                padding: 14px;
+            }
+
+            .members-achievement-video video {
+                max-height: 260px;
+            }
+
+            .members-achievement-info {
+                padding: 18px 16px;
             }
         }
 
@@ -640,9 +695,9 @@
                 <li><a class="nav-link" href="#overview" data-target="overview">实验室概况</a></li>
                 <li><a class="nav-link" href="#advisor" data-target="advisor">导师简介</a></li>
                 <li><a class="nav-link" href="#projects" data-target="projects">科研项目</a></li>
+                <li><a class="nav-link" href="#achievements" data-target="achievements">成员成果</a></li>
                 <li><a class="nav-link" href="#publications" data-target="publications">论文发表</a></li>
                 <li><a class="nav-link" href="#members" data-target="members">现役成员</a></li>
-                <li><a class="nav-link" href="#achievements" data-target="achievements">成员成果</a></li>
                 <li><a class="nav-link" href="#admission" data-target="admission">招生信息</a></li>
             </ul>
         </div>
@@ -662,9 +717,9 @@
             <li><a class="nav-link" href="#overview" data-target="overview">实验室概况</a></li>
             <li><a class="nav-link" href="#advisor" data-target="advisor">导师简介</a></li>
             <li><a class="nav-link" href="#projects" data-target="projects">科研项目</a></li>
+            <li><a class="nav-link" href="#achievements" data-target="achievements">成员成果</a></li>
             <li><a class="nav-link" href="#publications" data-target="publications">论文发表</a></li>
             <li><a class="nav-link" href="#members" data-target="members">现役成员</a></li>
-            <li><a class="nav-link" href="#achievements" data-target="achievements">成员成果</a></li>
             <li><a class="nav-link" href="#admission" data-target="admission">招生信息</a></li>
         </ul>
     </nav>
@@ -1012,42 +1067,31 @@
 
         <section id="achievements">
             <h3>成员成果</h3>
-            <div class="achievement-list">
-                <div class="achievement-card">
-                    <div class="achievement-title">全国高校心理学专业本科生创新创业论坛一等奖</div>
-                    <div class="achievement-member">获奖成员：余熙悦（队长）</div>
-                    <div class="achievement-desc">在2024年全国高校心理学专业本科生创新创业论坛心理学产品设计分论坛中荣获全国一等奖。</div>
-                    <div class="achievement-date">2024年</div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-title">深圳航空文化创意IP设计大赛全国冠军</div>
-                    <div class="achievement-member">获奖成员：陈凯琳</div>
-                    <div class="achievement-desc">在深圳航空文化创意IP设计大赛中荣获全国第一名。</div>
-                    <div class="achievement-date">2024年</div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-title">广东省心理学会优秀论文三等奖</div>
-                    <div class="achievement-member">获奖成员：肖睿涵</div>
-                    <div class="achievement-desc">在广东省心理学会优秀论文评选中荣获三等奖。</div>
-                    <div class="achievement-date">2024年</div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-title">研究生一等学业奖学金</div>
-                    <div class="achievement-member">获奖成员：钟鸣蔚</div>
-                    <div class="achievement-desc">凭借优异的学业成绩和科研表现荣获研究生一等学业奖学金。</div>
-                    <div class="achievement-date">2024年</div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-title">盐田区社会工作服务案例一等奖</div>
-                    <div class="achievement-member">获奖成员：张思娜</div>
-                    <div class="achievement-desc">在2024年盐田区社会工作服务案例评选中荣获一等奖。</div>
-                    <div class="achievement-date">2024年</div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-title">腾讯音乐人原创歌手大赛深圳赛区五强</div>
-                    <div class="achievement-member">获奖成员：卢夏麦</div>
-                    <div class="achievement-desc">在2023年腾讯音乐人原创歌手大赛深圳赛区中成功晋级五强。</div>
-                    <div class="achievement-date">2023年</div>
+            <div class="members-achievement">
+                <div class="members-achievement-layout">
+                    <div class="members-achievement-video">
+                        <video controls preload="metadata">
+                            <source src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/25d4bd85ad73c6f23040311d1e66aa59_raw.mp4" type="video/mp4">
+                            您的浏览器不支持 HTML5 视频播放。
+                        </video>
+                    </div>
+                    <div class="members-achievement-info">
+                        <div class="members-achievement-profile">
+                            <!-- 可替换成员头像：将 src 改为对应成员图片路径 -->
+                            <img class="members-achievement-avatar" src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/mgy.jpg?Expires=1776326297&OSSAccessKeyId=TMP.3Kwpd7GA3Uwpifmnm7J6of77SHNHSmvw6UFw57GAoHXyEmqHSHGH2iPQbaMsrPfboh762KPJNN3usHobsvy3JdR1EMtR6i&Signature=HKL%2BmLRhcs4sXgXt5C2mC9fT%2BfY%3D" alt="马光裕头像" loading="lazy" width="72" height="72">
+                            <h4 class="members-achievement-name">马光裕</h4>
+                        </div>
+                        <p class="members-achievement-title">基于 CARLA 的自动驾驶车辆接管实验仿真程序</p>
+                        <div class="members-achievement-desc">
+                            <p>本平台基于 CARLA 自动驾驶模拟器开发，专门用于开展自动驾驶接管（Take-Over Request, TOR）的人因工程研究。该程序运行于 CARLA 仿真环境，能够模拟复杂的背景交通流，不同天气状况，并在特定场景下精确触发故障、诱导接管。</p>
+                            <p>核心功能</p>
+                            <ul>
+                                <li>高沉浸感视野：采用 21:9 超宽视角显示，并集成左、中、右三路数字化后视镜，真实还原驾驶员视野，提供良好的生态效度。</li>
+                                <li>实验自动化：支持从编号录入、场景初始化、障碍物自动生成到数据自动保存的全流程自动化。</li>
+                                <li>多维数据采集：系统可实时记录驾驶员接管反应时间（RT）、接管完成时间（TT）以及车道保持精度（SDLP）等关键安全性指标，并自动导出数据。</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
