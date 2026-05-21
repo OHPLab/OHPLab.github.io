@@ -214,6 +214,59 @@
             line-height: 1.7;
         }
 
+        /* ===== WECHAT CARD ===== */
+        .overview-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 200px;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .overview-body {
+            min-width: 0;
+        }
+
+        .wechat-card {
+            position: sticky;
+            top: 88px;
+            width: 200px;
+            padding: 18px 16px;
+            border: 1px solid #e0e8f0;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .wechat-card-title {
+            margin: 0 0 14px 0;
+            color: #003366;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .wechat-qr-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 14px auto;
+            border: 1px dashed #b9c7d6;
+            border-radius: 8px;
+            background: #f8fafc;
+            color: #6b7280;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .wechat-card-desc {
+            margin: 0;
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+
         /* ===== CAROUSEL ===== */
         .carousel {
             position: relative;
@@ -758,6 +811,27 @@
                 line-height: 1.75; 
             }
 
+            .overview-layout {
+                display: block;
+            }
+
+            .wechat-card {
+                position: static;
+                width: 100%;
+                margin: 28px 0 0 0;
+                padding: 20px 16px;
+            }
+
+            .wechat-card-title,
+            .wechat-card-desc {
+                text-align: center;
+            }
+
+            .wechat-qr-placeholder {
+                width: min(180px, 100%);
+                height: min(180px, calc(100vw - 64px));
+            }
+
             .carousel {
                 height: 280px !important;
             }
@@ -886,28 +960,28 @@
     <main class="main-content">
 
         <section id="overview">
-            <h3>实验室概况</h3>
-            <h4>名称</h4>
-            <p>Occupational Health Psychology</p>
-            <h4>研究方向</h4>
-            <div class="info-box">
-                <ul>
-                <li>职业疲劳Occupational Fatigue</li>
-                <li>认知绩效Cognitive Performance</li>
-                <li>睡眠与清醒梦Sleep and Lucid Dream</li>
-                <li>轨道交通领域人因问题Human Factors in Railway Industry</li>
-                <li>人工智能在职业健康心理领域的应用AI in Occupational Health Psychology</li>
-            </ul>
-            </div>
-            <h4>定位 / 发展目标</h4>
-            <div class="info-box">
-                <p class="info-box-title">【定位】</p>
-                <p>我们的定位是<strong>“职业健康的守护者，人因科技的创新者”</strong>。</p>
-                <p>面向<strong>人工智能</strong>深度融入工作、学习与生活场景的时代背景，课题组以<strong>人因安全</strong>与<strong>身心福祉</strong>为核心，聚焦职业环境与智能技术环境中人的心理、生理功能变化及其行为后果。我们关注<strong>职业疲劳</strong>、<strong>睡眠质量</strong>、<strong>认知绩效</strong>、<strong>安全行为</strong>、<strong>AI使用疲劳</strong>、<strong>AI信任与依赖</strong>、<strong>AI消费心理</strong>等关键问题，致力于揭示个体在高负荷、高风险和高智能化情境下的心理机制与适应规律。</p>
-                <p>课题组整合<strong>心理学理论</strong>、<strong>多模态生理与行为评估技术</strong>、<strong>人工智能数据建模方法</strong>，构建从风险识别、状态预测到精准干预的全链条研究体系。研究场景覆盖<strong>轨道交通</strong>、<strong>核电</strong>、<strong>数字化控制室</strong>等复杂人机协同系统，也延伸至<strong>AI工具使用</strong>、<strong>智能产品消费</strong>、<strong>数字健康管理</strong>与<strong>教育科技</strong>等新兴应用场景。通过研究职业疲劳与AI使用疲劳的生成机制、智能技术对认知绩效和决策行为的影响，以及消费者对AI产品的信任、接受与持续使用机制，课题组旨在为<strong>AI时代的职业健康保护</strong>、<strong>人机协同优化</strong>、<strong>智能产品设计</strong>与<strong>个体身心福祉提升</strong>提供科学依据。</p>
-            </div>
-            <div class="info-box">
-                <p class="info-box-title">【发展目标】</p>
+            <h3>实验室名称：Occupational Health Psychology</h3>
+            <div class="overview-layout">
+                <div class="overview-body">
+                    <h4>研究方向</h4>
+                    <div class="info-box">
+                        <ul>
+                        <li>职业疲劳Occupational Fatigue</li>
+                        <li>认知绩效Cognitive Performance</li>
+                        <li>睡眠与清醒梦Sleep and Lucid Dream</li>
+                        <li>轨道交通领域人因问题Human Factors in Railway Industry</li>
+                        <li>人工智能在职业健康心理领域的应用AI in Occupational Health Psychology</li>
+                    </ul>
+                    </div>
+                    <h4>定位 / 发展目标</h4>
+                    <div class="info-box">
+                        <p class="info-box-title">【定位】</p>
+                        <p>我们的定位是<strong>“职业健康的守护者，人因科技的创新者”</strong>。</p>
+                        <p>面向<strong>人工智能</strong>深度融入工作、学习与生活场景的时代背景，课题组以<strong>人因安全</strong>与<strong>身心福祉</strong>为核心，聚焦职业环境与智能技术环境中人的心理、生理功能变化及其行为后果。我们关注<strong>职业疲劳</strong>、<strong>睡眠质量</strong>、<strong>认知绩效</strong>、<strong>安全行为</strong>、<strong>AI使用疲劳</strong>、<strong>AI信任与依赖</strong>、<strong>AI消费心理</strong>等关键问题，致力于揭示个体在高负荷、高风险和高智能化情境下的心理机制与适应规律。</p>
+                        <p>课题组整合<strong>心理学理论</strong>、<strong>多模态生理与行为评估技术</strong>、<strong>人工智能数据建模方法</strong>，构建从风险识别、状态预测到精准干预的全链条研究体系。研究场景覆盖<strong>轨道交通</strong>、<strong>核电</strong>、<strong>数字化控制室</strong>等复杂人机协同系统，也延伸至<strong>AI工具使用</strong>、<strong>智能产品消费</strong>、<strong>数字健康管理</strong>与<strong>教育科技</strong>等新兴应用场景。通过研究职业疲劳与AI使用疲劳的生成机制、智能技术对认知绩效和决策行为的影响，以及消费者对AI产品的信任、接受与持续使用机制，课题组旨在为<strong>AI时代的职业健康保护</strong>、<strong>人机协同优化</strong>、<strong>智能产品设计</strong>与<strong>个体身心福祉提升</strong>提供科学依据。</p>
+                    </div>
+                    <div class="info-box">
+                        <p class="info-box-title">【发展目标】</p>
                 <ul>
                     <li><strong>建设AI时代职业健康心理学研究高地：</strong>围绕<strong>职业疲劳</strong>、<strong>睡眠质量</strong>、<strong>认知表现</strong>、<strong>安全行为</strong>和<strong>AI使用疲劳</strong>开展系统研究，揭示智能化环境中的心理负荷、认知资源消耗与健康风险机制。</li>
                     <li><strong>推动人因智能技术转化：</strong>结合<strong>轨道交通</strong>、<strong>核电</strong>和<strong>数字化控制室</strong>等真实需求，开发基于多模态数据和AI建模的<strong>绩效评估</strong>、<strong>疲劳识别</strong>与<strong>风险预警系统</strong>，服务重大行业安全。</li>
@@ -916,51 +990,58 @@
                     <li><strong>发展艺术、科技与心理干预融合的新模式：</strong>深化<strong>音乐干预</strong>、<strong>表达性艺术治疗</strong>、<strong>清醒梦诱发</strong>和<strong>物理技术干预</strong>研究，结合智能评估技术，形成可量化、可推广的精准身心调节方案。</li>
                     <li><strong>培养复合型应用心理学人才：</strong>培养具备<strong>心理学理论</strong>、<strong>数据分析能力</strong>、<strong>AI素养</strong>、<strong>人因工程意识</strong>和<strong>行业问题解决能力</strong>的复合型人才。</li>
                 </ul>
-            </div>
-            <h4>实验室设备</h4>
-            <ul>
-                <li>PSG</li>
-                <li>actigraph wgt3x-bt加速度计</li>
-                <li>B & K 2245声级计</li>
-                <li>tobii pro眼动仪</li>
-            </ul>
+                    </div>
+                    <h4>实验室设备</h4>
+                    <ul>
+                        <li>PSG</li>
+                        <li>actigraph wgt3x-bt加速度计</li>
+                        <li>B & K 2245声级计</li>
+                        <li>tobii pro眼动仪</li>
+                    </ul>
 
-            <div id="lab-equipment-carousel" aria-label="实验室设备轮播图">
-                <div class="lab-equipment-track" id="labEquipmentTrack">
-                    <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB1.webp" type="image/webp">
-                            <img src="SLAB1.jpg" alt="实验室设备图片1" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div>
-                    <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB2.webp" type="image/webp">
-                            <img src="SLAB2.jpg" alt="实验室设备图片2" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div>
-                    <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB3.webp" type="image/webp">
-                            <img src="SLAB3.jpg" alt="实验室设备图片3" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div>
-                    <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB4.webp" type="image/webp">
-                            <img src="SLAB4.jpg" alt="实验室设备图片4" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div>
-                    <div class="lab-equipment-slide">
-                        <picture>
-                            <source srcset="images_compressed/SLAB5.webp" type="image/webp">
-                            <img src="SLAB5.jpg" alt="实验室设备图片5" loading="lazy" width="800" height="600">
-                        </picture>
+                    <div id="lab-equipment-carousel" aria-label="实验室设备轮播图">
+                        <div class="lab-equipment-track" id="labEquipmentTrack">
+                            <div class="lab-equipment-slide">
+                                <picture>
+                                    <source srcset="images_compressed/SLAB1.webp" type="image/webp">
+                                    <img src="SLAB1.jpg" alt="实验室设备图片1" loading="lazy" width="800" height="600">
+                                </picture>
+                            </div>
+                            <div class="lab-equipment-slide">
+                                <picture>
+                                    <source srcset="images_compressed/SLAB2.webp" type="image/webp">
+                                    <img src="SLAB2.jpg" alt="实验室设备图片2" loading="lazy" width="800" height="600">
+                                </picture>
+                            </div>
+                            <div class="lab-equipment-slide">
+                                <picture>
+                                    <source srcset="images_compressed/SLAB3.webp" type="image/webp">
+                                    <img src="SLAB3.jpg" alt="实验室设备图片3" loading="lazy" width="800" height="600">
+                                </picture>
+                            </div>
+                            <div class="lab-equipment-slide">
+                                <picture>
+                                    <source srcset="images_compressed/SLAB4.webp" type="image/webp">
+                                    <img src="SLAB4.jpg" alt="实验室设备图片4" loading="lazy" width="800" height="600">
+                                </picture>
+                            </div>
+                            <div class="lab-equipment-slide">
+                                <picture>
+                                    <source srcset="images_compressed/SLAB5.webp" type="image/webp">
+                                    <img src="SLAB5.jpg" alt="实验室设备图片5" loading="lazy" width="800" height="600">
+                                </picture>
+                            </div>
+                        </div>
+                        <button type="button" class="lab-equipment-btn prev" id="labEquipmentPrev" aria-label="上一张">&#8249;</button>
+                        <button type="button" class="lab-equipment-btn next" id="labEquipmentNext" aria-label="下一张">&#8250;</button>
                     </div>
                 </div>
-                <button type="button" class="lab-equipment-btn prev" id="labEquipmentPrev" aria-label="上一张">&#8249;</button>
-                <button type="button" class="lab-equipment-btn next" id="labEquipmentNext" aria-label="下一张">&#8250;</button>
-            </div>
+                <aside class="wechat-card" aria-label="微信公众号">
+                    <p class="wechat-card-title">关注课题组公众号</p>
+                    <div class="wechat-qr-placeholder">二维码占位</div>
+                    <p class="wechat-card-desc">获取课题组动态、论文成果与招生信息</p>
+                </aside>
+                </div>
         </section>
 
         <section id="advisor">
@@ -1215,6 +1296,7 @@
                 <div class="member-card"><div class="member-name">6. 冯梦洁</div><div class="member-info"><span class="member-label">研究方向：</span>职业疲劳、睡眠、自动驾驶</div><div class="member-info"><span class="member-label">兴趣爱好：</span>摄影、旅游、美妆</div><div class="member-info"><span class="member-label">获奖：</span>研究生学业奖学金</div></div>
                 <div class="member-card"><div class="member-name">7. 张思娜</div><div class="member-info"><span class="member-label">研究方向：</span>表达性艺术治疗、儿童与青少年情绪</div><div class="member-info"><span class="member-label">兴趣爱好：</span>健身、画画、摄影</div><div class="member-info"><span class="member-label">获奖：</span>（1）2024年盐田区社会工作服务案例一等奖；（2）2024年盐田区心理健康活动月特等奖</div></div>
                 <div class="member-card"><div class="member-name">8. 崔婧</div><div class="member-info"><span class="member-label">研究方向：</span>疲劳、睡眠、心理咨询</div><div class="member-info"><span class="member-label">兴趣爱好：</span>散步、聊天</div></div>
+                <div class="member-card"><div class="member-name">9. 甘雨露</div><div class="member-info"><span class="member-label">研究方向：</span>职业疲劳，ai协作</div><div class="member-info"><span class="member-label">兴趣爱好：</span>音乐，美食</div></div>
             </div>
 
             <h4>本科生</h4>
@@ -1224,7 +1306,6 @@
                 <div class="member-card"><div class="member-name">3. 马光裕</div><div class="member-info"><span class="member-label">研究方向：</span>人因工程、自动驾驶接管安全</div><div class="member-info"><span class="member-label">兴趣爱好：</span>骑行、网球、羽毛球、打游戏、观鸟</div></div>
                 <div class="member-card"><div class="member-name">4. 蒋欣月</div><div class="member-info"><span class="member-label">研究方向：</span>睡眠</div><div class="member-info"><span class="member-label">兴趣爱好：</span>打游戏、搞3D建模</div></div>
                 <div class="member-card"><div class="member-name">5. 林佳玲</div><div class="member-info"><span class="member-label">研究方向：</span>清醒梦、梦境、疲劳干预</div><div class="member-info"><span class="member-label">兴趣爱好：</span>羽毛球、辩论</div><div class="member-info"><span class="member-label">获奖：</span>全国大学生职业规划大赛（深大校区）心理学院二等奖</div></div>
-                <div class="member-card"><div class="member-name">6. 卢梓宁</div><div class="member-info"><span class="member-label">研究方向：</span>睡眠、梦境</div><div class="member-info"><span class="member-label">兴趣爱好：</span>排球</div></div>
             </div>
         </section>
 
