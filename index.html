@@ -446,6 +446,71 @@
             object-fit: contain;
         }
 
+        .members-achievement-video img {
+            width: 100%;
+            max-height: 360px;
+            border-radius: 10px;
+            background: #fff;
+            display: block;
+            object-fit: contain;
+        }
+
+        .members-achievement-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .paper-media-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 14px;
+            background: #f5f8fc;
+            border-radius: 12px;
+        }
+
+        .paper-top-images {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .paper-top-images img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        .paper-chart-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(180px, 1fr));
+            gap: 14px;
+            max-width: 100%;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .paper-chart-grid img {
+            width: 100%;
+            height: auto;
+            max-height: 420px;
+            object-fit: contain;
+            display: block;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        .paper-chart-grid img.wide-chart,
+        .paper-chart-grid .wide-chart {
+            grid-column: 1 / -1;
+            max-width: 100%;
+        }
+
         .members-achievement-info {
             padding: 22px 24px;
             background: #fbfdff;
@@ -477,6 +542,56 @@
             line-height: 1.4;
         }
 
+        .members-achievement-author-meta {
+            margin-bottom: 16px;
+            padding: 14px 16px;
+            border: 1px solid #e0e8f0;
+            border-radius: 10px;
+            background: #f5f9fd;
+        }
+
+        .members-achievement-author-label {
+            margin: 0 0 6px 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #5a6c80;
+            font-weight: 600;
+        }
+
+        .members-achievement-author-names {
+            margin: 0 0 6px 0;
+            font-size: 1rem;
+            line-height: 1.55;
+            color: #003366;
+            font-weight: 600;
+        }
+
+        .members-achievement-author-journal {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #5a6c80;
+        }
+
+        .paper-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .paper-tags span {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: #e6f0fa;
+            color: #003366;
+            font-size: 0.82rem;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
         .members-achievement-title {
             margin: 0 0 10px 0;
             font-size: 1.05rem;
@@ -502,6 +617,24 @@
             line-height: 1.7;
             color: #44556a;
             font-size: 0.95rem;
+        }
+
+        .members-achievement-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: #003366;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .members-achievement-link:hover {
+            background: #004b8d;
+            transform: translateY(-1px);
         }
 
         /* ===== MOBILE STYLES ===== */
@@ -663,8 +796,34 @@
                 max-height: 260px;
             }
 
+            .members-achievement-video img {
+                max-height: 260px;
+            }
+
+            .members-achievement-gallery {
+                gap: 12px;
+            }
+
+            .paper-top-images,
+            .paper-chart-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .paper-chart-grid {
+                max-width: 100%;
+            }
+
+            .paper-chart-grid img {
+                max-height: none;
+            }
+
             .members-achievement-info {
                 padding: 18px 16px;
+            }
+
+            .members-achievement-author-meta {
+                margin-bottom: 14px;
+                padding: 12px 14px;
             }
         }
 
@@ -743,15 +902,19 @@
             <h4>定位 / 发展目标</h4>
             <div class="info-box">
                 <p class="info-box-title">【定位】</p>
-                <p>我们的定位是"职业健康的守护者，人因科技的创新者"。以人因安全与身心福祉为核心，致力于探究职业环境下人类心理与生理功能的交互机制。我们专注于职业疲劳的生成机理及其对认知绩效的影响，通过整合心理学理论与多模态评估技术，构建从风险预测到精准干预（如音乐治疗、物理技术干预）的全链条研究体系，旨在提升高风险行业（如轨道交通、核电）从业者的职业健康水平。</p>
+                <p>我们的定位是<strong>“职业健康的守护者，人因科技的创新者”</strong>。</p>
+                <p>面向<strong>人工智能</strong>深度融入工作、学习与生活场景的时代背景，课题组以<strong>人因安全</strong>与<strong>身心福祉</strong>为核心，聚焦职业环境与智能技术环境中人的心理、生理功能变化及其行为后果。我们关注<strong>职业疲劳</strong>、<strong>睡眠质量</strong>、<strong>认知绩效</strong>、<strong>安全行为</strong>、<strong>AI使用疲劳</strong>、<strong>AI信任与依赖</strong>、<strong>AI消费心理</strong>等关键问题，致力于揭示个体在高负荷、高风险和高智能化情境下的心理机制与适应规律。</p>
+                <p>课题组整合<strong>心理学理论</strong>、<strong>多模态生理与行为评估技术</strong>、<strong>人工智能数据建模方法</strong>，构建从风险识别、状态预测到精准干预的全链条研究体系。研究场景覆盖<strong>轨道交通</strong>、<strong>核电</strong>、<strong>数字化控制室</strong>等复杂人机协同系统，也延伸至<strong>AI工具使用</strong>、<strong>智能产品消费</strong>、<strong>数字健康管理</strong>与<strong>教育科技</strong>等新兴应用场景。通过研究职业疲劳与AI使用疲劳的生成机制、智能技术对认知绩效和决策行为的影响，以及消费者对AI产品的信任、接受与持续使用机制，课题组旨在为<strong>AI时代的职业健康保护</strong>、<strong>人机协同优化</strong>、<strong>智能产品设计</strong>与<strong>个体身心福祉提升</strong>提供科学依据。</p>
             </div>
             <div class="info-box">
                 <p class="info-box-title">【发展目标】</p>
                 <ul>
-                    <li><strong>打造一流的职业健康心理学研究高地：</strong>深耕职业疲劳、睡眠质量与认知表现领域，在国际顶级期刊持续产出高质量研究成果，提升学术影响力。</li>
-                    <li><strong>推动复杂系统下的人因技术转化：</strong>结合数字化控制室与轨道交通实战需求，开发基于多模态数据的绩效评估系统，为国家重大行业安全提供科学支撑。</li>
-                    <li><strong>探索艺术与科技融合的干预新模式：</strong>深化表达性艺术治疗与清醒梦诱发技术的研究，将心理干预从临床延伸至职场与教育领域，提供系统化的身心调节方案。</li>
-                    <li><strong>培养复合型应用心理学人才：</strong>依托"案例式+体验式"教学改革项目，培养具备扎实研究能力且能解决复杂行业实际问题的复合型专家。</li>
+                    <li><strong>建设AI时代职业健康心理学研究高地：</strong>围绕<strong>职业疲劳</strong>、<strong>睡眠质量</strong>、<strong>认知表现</strong>、<strong>安全行为</strong>和<strong>AI使用疲劳</strong>开展系统研究，揭示智能化环境中的心理负荷、认知资源消耗与健康风险机制。</li>
+                    <li><strong>推动人因智能技术转化：</strong>结合<strong>轨道交通</strong>、<strong>核电</strong>和<strong>数字化控制室</strong>等真实需求，开发基于多模态数据和AI建模的<strong>绩效评估</strong>、<strong>疲劳识别</strong>与<strong>风险预警系统</strong>，服务重大行业安全。</li>
+                    <li><strong>拓展AI使用疲劳与数字心理健康研究：</strong>关注生成式AI和智能平台高频使用中的<strong>认知过载</strong>、<strong>技术焦虑</strong>、<strong>算法依赖</strong>、<strong>信任校准</strong>与<strong>人机边界感</strong>问题，为智能技术的健康使用和人本化设计提供依据。</li>
+                    <li><strong>探索AI消费心理与智能产品接受机制：</strong>研究用户对AI产品和智能服务的<strong>信任</strong>、<strong>风险感知</strong>、<strong>情感依附</strong>、<strong>付费意愿</strong>与<strong>持续使用行为</strong>，为AI产品设计、用户体验优化和负责任推广提供心理学支持。</li>
+                    <li><strong>发展艺术、科技与心理干预融合的新模式：</strong>深化<strong>音乐干预</strong>、<strong>表达性艺术治疗</strong>、<strong>清醒梦诱发</strong>和<strong>物理技术干预</strong>研究，结合智能评估技术，形成可量化、可推广的精准身心调节方案。</li>
+                    <li><strong>培养复合型应用心理学人才：</strong>培养具备<strong>心理学理论</strong>、<strong>数据分析能力</strong>、<strong>AI素养</strong>、<strong>人因工程意识</strong>和<strong>行业问题解决能力</strong>的复合型人才。</li>
                 </ul>
             </div>
             <h4>实验室设备</h4>
@@ -1094,6 +1257,80 @@
                     </div>
                 </div>
             </div>
+            <div class="members-achievement">
+                <div class="members-achievement-layout">
+                    <div class="members-achievement-video">
+                        <div class="members-achievement-gallery">
+                            <img src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/arti1.png" alt="论文展示素材1" loading="lazy">
+                            <img src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/arti2.png" alt="论文展示素材2" loading="lazy">
+                            <img src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/arti3.png" alt="论文展示素材3" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="members-achievement-info">
+                        <div class="members-achievement-author-meta">
+                            <p class="members-achievement-author-label">作者团队</p>
+                            <p class="members-achievement-author-names">范家琳、谭舒月、李如欣、张乐怡</p>
+                            <p class="members-achievement-author-journal">Behavioral Sciences ｜ SSCI Q2 ｜ 2026年2月</p>
+                        </div>
+                        <p class="members-achievement-title">论文发表于 Behavioral Sciences：中西方古典音乐对大学生认知任务诱发脑力疲劳的影响</p>
+                        <div class="members-achievement-desc">
+                            <p>2026年2月，OHPsych课题组导师范家琳老师携研究生谭舒月、李如欣及本科生张乐怡，合作论文《中西方古典音乐对大学生认知任务诱发脑力疲劳的影响》发表于SSCI Q2期刊 Behavioral Sciences。</p>
+                            <p>研究通过实验室疲劳诱发范式，比较中国传统音乐、西方古典音乐与无音乐条件对大学生心理疲劳的影响。结果发现，两类音乐均能帮助维持认知警觉性、保护反应速度并稳定情绪状态，且干预效果无显著差异。该研究为中国传统音乐在心理疲劳干预中的应用价值提供了实验心理学证据。</p>
+                            <p>研究亮点：</p>
+                            <ul>
+                                <li>比较中国传统音乐与西方古典音乐对心理疲劳的干预效果。</li>
+                                <li>采用主观量表、日记记录与PVT任务进行多维度评估。</li>
+                                <li>发现两类音乐均能保护警觉性、反应速度和情绪状态。</li>
+                                <li>为中国传统音乐在疲劳缓解与心理干预中的应用提供实证支持。</li>
+                            </ul>
+                            <a class="members-achievement-link" href="https://doi.org/10.3390/bs16020277" target="_blank" rel="noopener noreferrer">查看原文</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="members-achievement">
+                <div class="members-achievement-layout">
+                    <div class="members-achievement-video">
+                        <div class="paper-media-layout">
+                            <div class="paper-top-images">
+                                <img src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/arti4.png" alt="Noise &amp; Health论文标题页截图" loading="lazy">
+                                <img src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/arti7.png" alt="睡眠问题中介效应结果表" loading="lazy">
+                            </div>
+                            <div class="paper-chart-grid">
+                                <!-- 如果图片文件内部自带较大白边，需要重新裁切素材；CSS无法真正删除图片内部留白。 -->
+                                <img src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/arti5.png" alt="Noise &amp; Health论文摘要页截图" loading="lazy">
+                                <img src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/arti6.png" alt="PHQ-4、JSS-4与WNSS-8研究图表" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="members-achievement-info">
+                        <div class="members-achievement-author-meta">
+                            <p class="members-achievement-author-label">作者团队</p>
+                            <p class="members-achievement-author-names">陈裕洋、郑斯瑶、刘玉婷、Andrew Smith、范家琳</p>
+                            <div class="paper-tags">
+                                <span>Noise &amp; Health</span>
+                                <span>SCI</span>
+                                <span>JCR Q3</span>
+                                <span>2025</span>
+                            </div>
+                        </div>
+                        <p class="members-achievement-title">论文发表于 Noise &amp; Health：噪音敏感性、睡眠问题与心理健康</p>
+                        <div class="members-achievement-desc">
+                            <p>近期，OHPsych课题组本科生陈裕洋、郑斯瑶、刘玉婷与导师范家琳合作撰写的论文《Effect of Noise Sensitivity on Mental Health: Mediating Role of Sleep Problems》发表于SCI期刊 Noise &amp; Health。</p>
+                            <p>该研究关注噪音敏感性对大学生心理健康的影响，并进一步检验睡眠问题在噪音敏感性影响焦虑、抑郁过程中的中介作用。研究以深圳大学268名学生为对象，采用WNSS-8噪音敏感量表、PHQ-4患者健康问卷和JSS-4睡眠量表进行问卷调查。</p>
+                            <p>研究发现，噪音敏感性与焦虑、抑郁和睡眠问题均呈显著正相关；噪音敏感性能够预测睡眠问题、焦虑和抑郁；睡眠问题在噪音敏感性与焦虑、抑郁之间起到中介作用。该研究为理解环境噪音易感性、睡眠质量与心理健康之间的关系提供了实证依据，也为高校学生心理健康评估和睡眠干预提供了参考。</p>
+                            <p>研究亮点：</p>
+                            <ul>
+                                <li>探讨噪音敏感性对焦虑、抑郁和睡眠问题的影响。</li>
+                                <li>以睡眠问题作为中介变量，解释噪音敏感性影响心理健康的潜在机制。</li>
+                                <li>使用WNSS-8、PHQ-4和JSS-4进行多变量问卷评估。</li>
+                                <li>为高校学生心理健康筛查、睡眠干预和噪音环境管理提供实证支持。</li>
+                            </ul>
+                            <a class="members-achievement-link" href="https://doi.org/10.4103/nah.nah_155_24" target="_blank" rel="noopener noreferrer">查看原文</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="admission">
@@ -1407,3 +1644,4 @@
     </script>
 </body>
 </html>
+
