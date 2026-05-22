@@ -1,0 +1,8 @@
+{
+  "name": "lab-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "fetch:publications": "node scripts/fetch-publications.js"
+  }
+}

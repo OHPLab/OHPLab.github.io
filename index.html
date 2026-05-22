@@ -165,6 +165,33 @@
         ol { padding-left: 1.4em; }
         ol li { margin-bottom: 8px; }
 
+        .publication-list {
+            padding-left: 1.4em;
+        }
+
+        .publication-list li {
+            margin-bottom: 14px;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .publication-meta,
+        .publication-extra {
+            color: #555;
+        }
+
+        .publication-extra {
+            margin-top: 2px;
+            font-size: 0.95rem;
+        }
+
+        .publication-empty {
+            color: #666;
+        }
+
         /* ===== RECRUIT BOX ===== */
         .recruit-box {
             border: 1px solid #e0e8f0;
@@ -245,26 +272,13 @@
             line-height: 1.4;
         }
 
-        .wechat-qr-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .wechat-qr {
             width: 150px;
             height: 150px;
-            margin: 0 auto 14px auto;
-            border: 1px dashed #b9c7d6;
+            margin: 0 auto;
+            border: 1px solid #e0e8f0;
             border-radius: 8px;
-            background: #f8fafc;
-            color: #6b7280;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .wechat-card-desc {
-            margin: 0;
-            color: #555;
-            font-size: 0.92rem;
-            line-height: 1.65;
+            object-fit: cover;
         }
 
         /* ===== CAROUSEL ===== */
@@ -358,6 +372,89 @@
         .carousel-dot.active {
             background: #fff;
             transform: scale(1.3);
+        }
+
+        /* ===== ADVISOR PROFILE ===== */
+        .advisor-profile {
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 34px;
+        }
+
+        .advisor-profile-content {
+            max-width: 720px;
+            min-width: 0;
+        }
+
+        .advisor-profile-kicker {
+            margin: 0 0 10px 0;
+            color: #003366;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .advisor-profile-name {
+            margin: 0;
+            color: #111;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .advisor-profile-title {
+            margin: 10px 0 18px 0;
+            color: #003366;
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.7;
+        }
+
+        .advisor-profile-research {
+            display: inline-flex;
+            align-items: center;
+            margin: 0 0 20px 0;
+            padding: 8px 14px;
+            border-left: 3px solid #003366;
+            background: #f4f8fb;
+            color: #2f4053;
+            font-size: 0.98rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .advisor-profile p {
+            max-width: 68ch;
+            margin: 0 0 16px 0;
+            color: #3f4650;
+            line-height: 1.85;
+        }
+
+        .advisor-profile p:last-child {
+            margin-bottom: 0;
+        }
+
+        .advisor-profile-photo {
+            width: 100%;
+            max-width: 390px;
+            justify-self: end;
+            margin: 0;
+        }
+
+        .advisor-profile-photo picture,
+        .advisor-profile-photo img {
+            width: 100%;
+            display: block;
+        }
+
+        .advisor-profile-photo img {
+            height: clamp(360px, 42vw, 520px);
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 14px;
+            box-shadow: 0 14px 34px rgba(0, 28, 58, 0.16);
         }
 
         /* ===== MEMBER CARDS ===== */
@@ -822,18 +919,58 @@
                 padding: 20px 16px;
             }
 
-            .wechat-card-title,
-            .wechat-card-desc {
+            .wechat-card-title {
                 text-align: center;
             }
 
-            .wechat-qr-placeholder {
+            .wechat-qr {
                 width: min(180px, 100%);
                 height: min(180px, calc(100vw - 64px));
             }
 
             .carousel {
                 height: 280px !important;
+            }
+
+            .advisor-profile {
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 24px;
+                align-items: stretch;
+                margin-bottom: 30px;
+            }
+
+            .advisor-profile-content {
+                max-width: 100%;
+            }
+
+            .advisor-profile-name {
+                font-size: 1.65rem;
+            }
+
+            .advisor-profile-title {
+                font-size: 1rem;
+            }
+
+            .advisor-profile-research {
+                display: block;
+                width: 100%;
+                padding: 10px 13px;
+            }
+
+            .advisor-profile p {
+                max-width: 100%;
+            }
+
+            .advisor-profile-photo {
+                max-width: 100%;
+                justify-self: auto;
+                margin: 0;
+            }
+
+            .advisor-profile-photo img {
+                width: 100%;
+                height: min(420px, 112vw);
             }
 
             .carousel-btn { 
@@ -930,7 +1067,7 @@
                 <li><a class="nav-link" href="#projects" data-target="projects">科研项目</a></li>
                 <li><a class="nav-link" href="#achievements" data-target="achievements">成员成果</a></li>
                 <li><a class="nav-link" href="#publications" data-target="publications">论文发表</a></li>
-                <li><a class="nav-link" href="#members" data-target="members">现役成员</a></li>
+                <li><a class="nav-link" href="#members" data-target="members">主要成员</a></li>
                 <li><a class="nav-link" href="#admission" data-target="admission">招生信息</a></li>
             </ul>
         </div>
@@ -952,7 +1089,7 @@
             <li><a class="nav-link" href="#projects" data-target="projects">科研项目</a></li>
             <li><a class="nav-link" href="#achievements" data-target="achievements">成员成果</a></li>
             <li><a class="nav-link" href="#publications" data-target="publications">论文发表</a></li>
-            <li><a class="nav-link" href="#members" data-target="members">现役成员</a></li>
+            <li><a class="nav-link" href="#members" data-target="members">主要成员</a></li>
             <li><a class="nav-link" href="#admission" data-target="admission">招生信息</a></li>
         </ul>
     </nav>
@@ -1037,59 +1174,33 @@
                     </div>
                 </div>
                 <aside class="wechat-card" aria-label="微信公众号">
-                    <p class="wechat-card-title">关注课题组公众号</p>
-                    <div class="wechat-qr-placeholder">二维码占位</div>
-                    <p class="wechat-card-desc">获取课题组动态、论文成果与招生信息</p>
+                    <p class="wechat-card-title">关注课题组公众号，获得更多动态和福利</p>
+                    <img class="wechat-qr" src="https://ohpsy.oss-cn-shenzhen.aliyuncs.com/gzh.jpg" alt="课题组公众号二维码" loading="lazy" width="150" height="150">
                 </aside>
                 </div>
         </section>
 
         <section id="advisor">
-            <!-- Advisor Photo Carousel -->
-            <div class="carousel" id="advisorCarousel">
-                <div class="carousel-track" id="advisorCarouselTrack">
-                    <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor1.webp" type="image/webp">
-                            <img src="mentor1.jpg" alt="导师照片1" loading="lazy" width="400" height="533">
-                        </picture>
-                    </div>
-                    <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor2.webp" type="image/webp">
-                            <img src="mentor2.jpg" alt="导师照片2" loading="lazy" width="400" height="600">
-                        </picture>
-                    </div>
-                    <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor3.webp" type="image/webp">
-                            <img src="mentor3.jpg" alt="导师照片3" loading="lazy" width="400" height="266">
-                        </picture>
-                    </div>
-                    <div class="carousel-slide">
-                        <picture>
-                            <source srcset="images_compressed/mentor4.webp" type="image/webp">
-                            <img src="mentor4.jpg" alt="导师照片4" loading="lazy" width="400" height="280">
-                        </picture>
-                    </div>
-                </div>
-                <button class="carousel-btn prev" id="advisorCarouselPrev" aria-label="上一张">&#8249;</button>
-                <button class="carousel-btn next" id="advisorCarouselNext" aria-label="下一张">&#8250;</button>
-                <div class="carousel-indicators" id="advisorCarouselDots">
-                    <button class="carousel-dot active" data-index="0"></button>
-                    <button class="carousel-dot" data-index="1"></button>
-                    <button class="carousel-dot" data-index="2"></button>
-                    <button class="carousel-dot" data-index="3"></button>
-                </div>
-            </div>
             <h3>导师简介</h3>
-            <div class="info-box">
-            <p>
-                <strong>范家琳</strong>，深圳市海外高层次人才，深圳市中西医结合学会神经精神专委会委员，深圳市人文社科研究重点基地深圳大学心理健康研究中心成员，职业与健康心理 OHPsych 课题组 PI，英国职业与健康心理研究中心成员、英国计算机学会会员、英国心理学会会员、中国人类工效学会会员、中国心理学会会员。2014 年 7 月于英国约克大学计算机学院获「以人为中心的交互技术」硕士学位，师从 Alistair Edward 教授、Paul Cairns 教授；2019 年 4 月于英国卡迪夫大学心理学院获博士学位，师从 Andrew P. Smith 教授。
-            </p>
-            <p>
-                研究领域主要为职业与健康心理学，研究职业因素对健康、睡眠和工作效率影响，涉及调查安全相关风险因素，探究生活方式和健康状况对认知表现、情绪、睡眠和生理功能的影响，并对清醒梦研究有兴趣。担任 SCI/SSCI 期刊 <i>Applied Ergonomics</i>、<i>Fatigue Biomedicine Health &amp; Behavior</i>、<i>Work</i>、<i>Mindfulness</i> 等的审稿人。在国内外重要期刊以及国际会议上发表 SCI/SSCI/EI 检索论文二十余篇，其中，被引数 150+ 的论文 1 篇。
-            </p>
+            <div class="advisor-profile">
+                <div class="advisor-profile-content">
+                    <p class="advisor-profile-kicker">中国计算机学会人机交互专委会委员</p>
+                    <h4 class="advisor-profile-name">范家琳</h4>
+                    <p class="advisor-profile-title">深圳市海外高层次人才 / 职业与健康心理 OHPsych 课题组 PI</p>
+                    <p class="advisor-profile-research">研究方向：职业与健康心理学、人机交互、睡眠与疲劳、认知表现与身心健康</p>
+                    <p>
+                        深圳市中西医结合学会神经精神专委会委员，深圳市人文社科研究重点基地深圳大学心理健康研究中心成员，英国职业与健康心理研究中心成员、英国计算机学会会员、英国心理学会会员、中国人类工效学会会员、中国心理学会会员。2014 年 7 月于英国约克大学计算机学院获「以人为中心的交互技术」硕士学位，师从 Alistair Edward 教授、Paul Cairns 教授；2019 年 4 月于英国卡迪夫大学心理学院获博士学位，师从 Andrew P. Smith 教授。
+                    </p>
+                    <p>
+                        研究领域主要为职业与健康心理学，研究职业因素对健康、睡眠和工作效率影响，涉及调查安全相关风险因素，探究生活方式和健康状况对认知表现、情绪、睡眠和生理功能的影响，并对清醒梦研究有兴趣。担任 SCI/SSCI 期刊 <i>Applied Ergonomics</i>、<i>Fatigue Biomedicine Health &amp; Behavior</i>、<i>Work</i>、<i>Mindfulness</i> 等的审稿人。在国内外重要期刊以及国际会议上发表 SCI/SSCI/EI 检索论文二十余篇，其中，被引数 150+ 的论文 1 篇。
+                    </p>
+                </div>
+                <figure class="advisor-profile-photo">
+                    <picture>
+                        <source srcset="images_compressed/mentor1.webp" type="image/webp">
+                        <img src="mentor1.jpg" alt="范家琳导师照片" loading="lazy" width="400" height="533">
+                    </picture>
+                </figure>
             </div>
             <h4>主要荣誉</h4>
             <div class="info-box">
@@ -1197,29 +1308,13 @@
 
         <section id="publications">
             <h3>论文发表</h3>
-            <ol>
-                <li>Fan, J., Tan, X., Smith, A. P., &amp; Wang, J. (2024). Work-related musculoskeletal disorders, fatigue and stress among gas station workers in China: a cross-sectional study. <i>BMJ Open</i>, 14(7), e081853.</li>
-                <li>Huang, L., Fan, J., LeMoult, J., Chi, P., Zhao, Y., &amp; Chi, X. (2024). Effects of a Brief Self-Compassion Online Intervention on Complex Posttraumatic Stress Symptoms Among Chinese University Students With Trauma History: A Pilot Randomized Controlled Trial. <i>Research on Social Work Practice</i>, 10497315241267248.</li>
-                <li>Zheng, S., Tan, S., Tan, X., &amp; Fan, J. (2024). Positive Well-Being, Work-Related Rumination and Work Engagement among Chinese University Logistics Staff. <i>Behavioral Sciences</i>, 14(1), 65.</li>
-                <li>Wu, T., Tan, X., Li, Y., Liang, Y., &amp; Fan, J. (2024). The Relationship between Occupational Fatigue and Well-Being: The Moderating Effect of Unhealthy Eating Behaviour. <i>Behavioral Sciences</i>, 14(1), 32.</li>
-                <li>Yin, Y., Tan, X., &amp; Fan, J. (2023). Occupational fatigue and health of gas station workers: a review. <i>Work</i>, 76(2), 707-726.</li>
-                <li>Fan, J., Li, W., Lin, M., Li, X., &amp; Deng, X. (2023). Effects of mindfulness and fatigue on emotional processing: an event-related potentials study. <i>Frontiers in Behavioral Neuroscience</i>, 17, 1175067.</li>
-                <li>Tan, S., &amp; Fan, J. (2023). A systematic review of new empirical data on lucid dream induction techniques. <i>Journal of Sleep Research</i>, 32(3), e13786.</li>
-                <li>Li, W., Chen, J., Li, M., Smith, A. P., &amp; Fan, J. (2022). The Effect of Exercise on Academic Fatigue and Sleep Quality among University Students. <i>Frontiers in Psychology</i>, 13, 1025280.</li>
-                <li>Fan, J., &amp; Smith, A. P. (2021). Information overload, wellbeing and COVID-19: A survey in China. <i>Behavioral Sciences</i>, 11(5), 62.</li>
-                <li>Fan, J., Liu, J. &amp; Smith, A. P. (2021). Relationship Between Workload, Fatigue and Sleep Quality of Psychiatric Staff. In: Longo L., Leva M. (eds.) <i>Human Mental Workload: Models and Applications</i>. Communications in Computer and Information Science, 1493, 151-164. Springer, Cham.</li>
-                <li>Fan, J., &amp; Smith, A. P. (2020). Causes of Rail Staff Fatigue: Results of Qualitative Analysis and a Diary Study. In: Longo L., Leva M. (eds.) <i>Human Mental Workload: Models and Applications</i>. Communications in Computer and Information Science, 1318, 227-249. Springer, Cham.</li>
-                <li>Fan, J., &amp; Smith, A. P. (2020). Effects of Occupational Fatigue on Cognitive Performance of Staff from a Train Operating Company: A Field Study. <i>Frontiers in Psychology</i>, 11, 2366.</li>
-                <li>Fan, J. &amp; Smith, A. P. (2019). Mental Workload and Other Causes of Different Types of Fatigue in Rail Staff. In: Longo L., Leva M. (eds.) <i>Human Mental Workload: Models and Applications</i>. Communications in Computer and Information Science, 1012, 147-159. Springer, Cham.</li>
-                <li>Fan, J. &amp; Smith, A. P. (2018). The Mediating Effect of Fatigue on Work-life Balance Positive Well-being in Railway Staff. <i>Open Journal of Social Sciences</i>, 6(6), 1-10.</li>
-                <li>Fan, J. &amp; Smith, A. P. (2018). A Preliminary Review of Fatigue among Rail Staff. <i>Frontiers in Psychology</i>, 9, 634.</li>
-                <li>Fan, J. &amp; Smith, A. P. (2017). Positive Well-Being and Work-Life Balance among UK Railway Staff. <i>Open Journal of Social Sciences</i>, 5(6), 1-6.</li>
-                <li>Fan, J. &amp; Smith, A. P. (2017). The Impact of Workload and Fatigue on Performance. In: Longo L., Leva M. (eds.) <i>Human Mental Workload: Models and Applications</i>. Communications in Computer and Information Science, 726, 90-105. Springer, Cham.</li>
+            <ol id="publication-list" class="publication-list">
+                <li class="publication-empty">论文列表暂未加载</li>
             </ol>
         </section>
 
         <section id="members">
-            <h3>现役成员</h3>
+            <h3>主要成员</h3>
 
             <!-- Photo Carousel -->
             <div class="carousel" id="memberCarousel">
@@ -1297,6 +1392,7 @@
                 <div class="member-card"><div class="member-name">7. 张思娜</div><div class="member-info"><span class="member-label">研究方向：</span>表达性艺术治疗、儿童与青少年情绪</div><div class="member-info"><span class="member-label">兴趣爱好：</span>健身、画画、摄影</div><div class="member-info"><span class="member-label">获奖：</span>（1）2024年盐田区社会工作服务案例一等奖；（2）2024年盐田区心理健康活动月特等奖</div></div>
                 <div class="member-card"><div class="member-name">8. 崔婧</div><div class="member-info"><span class="member-label">研究方向：</span>疲劳、睡眠、心理咨询</div><div class="member-info"><span class="member-label">兴趣爱好：</span>散步、聊天</div></div>
                 <div class="member-card"><div class="member-name">9. 甘雨露</div><div class="member-info"><span class="member-label">研究方向：</span>职业疲劳，ai协作</div><div class="member-info"><span class="member-label">兴趣爱好：</span>音乐，美食</div></div>
+                <div class="member-card"><div class="member-name">10. 詹敏</div><div class="member-info"><span class="member-label">研究方向：</span>亲子相关疲劳、工作反刍</div><div class="member-info"><span class="member-label">兴趣爱好：</span>唱歌、跳舞、游戏、写小说、剪辑</div></div>
             </div>
 
             <h4>本科生</h4>
@@ -1535,6 +1631,103 @@
 
         showSection('overview');
 
+        // ===== PUBLICATIONS =====
+        (function() {
+            const list = document.getElementById('publication-list');
+            if (!list) return;
+
+            function setFallback() {
+                list.innerHTML = '<li class="publication-empty">论文列表暂未加载</li>';
+            }
+
+            function text(value) {
+                return value == null ? '' : String(value);
+            }
+
+            function appendText(parent, value) {
+                parent.appendChild(document.createTextNode(value));
+            }
+
+            function renderPublication(publication) {
+                const item = document.createElement('li');
+                const authors = Array.isArray(publication.authors)
+                    ? publication.authors.join(', ')
+                    : text(publication.authors);
+
+                if (authors) {
+                    const authorsSpan = document.createElement('span');
+                    authorsSpan.className = 'publication-meta';
+                    appendText(authorsSpan, authors + ' ');
+                    item.appendChild(authorsSpan);
+                }
+
+                if (publication.year) {
+                    appendText(item, '(' + publication.year + '). ');
+                }
+
+                const titleSpan = document.createElement('span');
+                titleSpan.className = 'publication-title';
+                appendText(titleSpan, text(publication.title));
+                item.appendChild(titleSpan);
+
+                if (publication.journal) {
+                    appendText(item, '. ');
+                    const journal = document.createElement('i');
+                    appendText(journal, publication.journal);
+                    item.appendChild(journal);
+                }
+
+                if (publication.doi) {
+                    appendText(item, '. ');
+                    const doi = text(publication.doi).replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+                    const link = document.createElement('a');
+                    link.href = publication.url || ('https://doi.org/' + doi);
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    appendText(link, 'DOI: ' + doi);
+                    item.appendChild(link);
+                }
+
+                const extras = ['note', 'category', 'quartile', 'source_note']
+                    .filter(key => publication[key])
+                    .map(key => publication[key]);
+                if (extras.length) {
+                    const extra = document.createElement('div');
+                    extra.className = 'publication-extra';
+                    appendText(extra, extras.join(' | '));
+                    item.appendChild(extra);
+                }
+
+                return item;
+            }
+
+            fetch('./data/publications.json', { cache: 'no-cache' })
+                .then(response => {
+                    if (!response.ok) throw new Error('Failed to load publications');
+                    return response.json();
+                })
+                .then(publications => {
+                    if (!Array.isArray(publications) || !publications.length) {
+                        setFallback();
+                        return;
+                    }
+
+                    list.innerHTML = '';
+                    publications
+                        .slice()
+                        .filter(publication => publication && publication.confirmed === true && publication.manual === true)
+                        .sort((a, b) => {
+                            const yearDiff = (Number(b.year) || 0) - (Number(a.year) || 0);
+                            if (yearDiff) return yearDiff;
+                            return text(b.publication_date).localeCompare(text(a.publication_date));
+                        })
+                        .forEach(publication => list.appendChild(renderPublication(publication)));
+
+                    if (!list.children.length) setFallback();
+                })
+                .catch(setFallback);
+        })();
+
         // ===== CAROUSEL =====
         (function() {
             const track = document.getElementById('carouselTrack');
@@ -1639,47 +1832,6 @@
             carousel.addEventListener('mouseleave', startAuto);
 
             startAuto();
-        })();
-
-        // ===== ADVISOR CAROUSEL =====
-        (function() {
-            const track = document.getElementById('advisorCarouselTrack');
-            const dots = document.querySelectorAll('#advisorCarouselDots .carousel-dot');
-            const total = track ? track.children.length : 0;
-            let current = 0, timer = null, startX = 0, isDragging = false;
-
-            function goTo(idx) {
-                current = (idx + total) % total;
-                track.style.transform = 'translateX(-' + (current * 100) + '%)';
-                dots.forEach((d, i) => d.classList.toggle('active', i === current));
-            }
-
-            function startAuto() {
-                stopAuto();
-                timer = setInterval(() => goTo(current + 1), 5000);
-            }
-            function stopAuto() { clearInterval(timer); }
-
-            if (track) {
-                document.getElementById('advisorCarouselPrev').addEventListener('click', () => { goTo(current - 1); startAuto(); });
-                document.getElementById('advisorCarouselNext').addEventListener('click', () => { goTo(current + 1); startAuto(); });
-                dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); startAuto(); }));
-
-                // Touch swipe
-                track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; stopAuto(); }, {passive:true});
-                track.addEventListener('touchend', e => {
-                    if (!isDragging) return;
-                    const diff = startX - e.changedTouches[0].clientX;
-                    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-                    isDragging = false; startAuto();
-                }, {passive:true});
-
-                // Pause on hover
-                document.getElementById('advisorCarousel').addEventListener('mouseenter', stopAuto);
-                document.getElementById('advisorCarousel').addEventListener('mouseleave', startAuto);
-
-                startAuto();
-            }
         })();
 
         // ===== ADVISOR HONORS CAROUSEL =====
