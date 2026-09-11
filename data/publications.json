@@ -1,5 +1,106 @@
 [
   {
+    "title": "The Effects of Expressive Arts Therapy on Emotion Regulation and Aggression in Violent Offenders: A Randomized Controlled Trial",
+    "authors": [
+      "Xu, Z.",
+      "Ou, X.",
+      "Fan, J."
+    ],
+    "journal": "Behavioral Sciences",
+    "year": 2026,
+    "publication_date": "2026-08-10",
+    "doi": "10.3390/bs16081366",
+    "url": "https://doi.org/10.3390/bs16081366",
+    "source": "manual",
+    "openalex_id": "",
+    "confirmed": true,
+    "manual": true,
+    "note": "16(8), 1366"
+  },
+  {
+    "title": "Neural Correlates of Brief Mindfulness Practice in Fostering Interpersonal Cooperation",
+    "authors": [
+      "Fan, J.",
+      "Li, Y.",
+      "Chen, Y.",
+      "Lin, W.",
+      "Deng, X."
+    ],
+    "journal": "Mindfulness",
+    "year": 2026,
+    "publication_date": "2026-06-11",
+    "doi": "10.1007/s12671-026-02890-y",
+    "url": "https://doi.org/10.1007/s12671-026-02890-y",
+    "source": "manual",
+    "openalex_id": "",
+    "confirmed": true,
+    "manual": true,
+    "note": "1-16"
+  },
+  {
+    "title": "Oxytocin Modulates Inhibitory Control via Neural-Temporal Mechanisms",
+    "authors": [
+      "Yi, W.",
+      "Lin, H.",
+      "Xu, X.",
+      "Fan, J.",
+      "Chen, Q.",
+      "Xin, F."
+    ],
+    "journal": "Psychophysiology",
+    "year": 2026,
+    "publication_date": "2026-06-01",
+    "doi": "10.1111/psyp.70342",
+    "url": "https://doi.org/10.1111/psyp.70342",
+    "source": "manual",
+    "openalex_id": "",
+    "confirmed": true,
+    "manual": true,
+    "note": "63(6), e70342"
+  },
+  {
+    "title": "Neural underpinnings of thematic and taxonomic processing in indirect semantic priming: evidence from the N400 and frontal negativity",
+    "authors": [
+      "Xiao, F.",
+      "Xiao, N.",
+      "Liang, X.",
+      "Zhong, Y.",
+      "Fan, J.",
+      "Chen, Q."
+    ],
+    "journal": "BMC Psychology",
+    "year": 2026,
+    "publication_date": "2026-04-24",
+    "doi": "10.1186/s40359-026-04589-0",
+    "url": "https://doi.org/10.1186/s40359-026-04589-0",
+    "source": "manual",
+    "openalex_id": "",
+    "confirmed": true,
+    "manual": true,
+    "note": "14(1), 773"
+  },
+  {
+    "title": "Mental health, coping and related risk factors during the first 2 years of the COVID-19 pandemic in children: Nationally representative, multi-wave, cross-sectional results from 12 countries from the global COH-FIT study",
+    "authors": [
+      "Agorastos, A.",
+      "Thompson, T.",
+      "Solmi, M.",
+      "Cortese, S.",
+      "Estrade, A.",
+      "et al. (incl. Fan, J.)"
+    ],
+    "journal": "European Neuropsychopharmacology",
+    "year": 2026,
+    "publication_date": "2026-03-01",
+    "doi": "10.1016/j.euroneuro.2025.112741",
+    "url": "https://doi.org/10.1016/j.euroneuro.2025.112741",
+    "source": "manual",
+    "openalex_id": "",
+    "confirmed": true,
+    "manual": true,
+    "note": "104, 112741（COH-FIT 国际协作研究，共 150 余位作者，范家琳为合作作者）"
+  },
+  {
     "title": "基于跨尺度仿生思想的地下生态城市构建新范式",
     "authors": [
       "韩凯航",
@@ -19,8 +120,7 @@
     "source": "manual",
     "openalex_id": "",
     "confirmed": true,
-    "manual": true,
-    "source_note": "来源：学院官网人工核对"
+    "manual": true
   },
   {
     "title": "The Effects of Traditional Chinese Music and Western Classical Music on Mental Fatigue Induced by Cognitive Tasks",
@@ -39,8 +139,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "16(2), 277",
-    "source_note": "来源：学院官网人工核对"
+    "note": "16(2), 277"
   },
   {
     "title": "Emotional valence modulates the early (P2/N200) and late (N400/LPC) components in category-based inductive reasoning",
@@ -62,8 +161,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "113340",
-    "source_note": "来源：学院官网人工核对"
+    "note": "113340"
   },
   {
     "title": "Noise annoyance among college students: A qualitative analysis of complaint emails in a Chinese university",
@@ -82,8 +180,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "27(127), 505-515",
-    "source_note": "来源：学院官网人工核对"
+    "note": "27(127), 505-515"
   },
   {
     "title": "表达性艺术治疗对暴力型犯罪罪犯自尊和攻击行为的实证研究",
@@ -99,8 +196,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "240(03), 107-118",
-    "source_note": "来源：学院官网人工核对"
+    "note": "240(03), 107-118"
   },
   {
     "title": "Rope skipping or badminton? Exercise reduced sleep onset latency in university students",
@@ -119,8 +215,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "7, 1514596",
-    "source_note": "来源：学院官网人工核对"
+    "note": "7, 1514596"
   },
   {
     "title": "Effect of noise sensitivity on mental health: Mediating role of sleep problems",
@@ -140,8 +235,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "27(125), 158-167",
-    "source_note": "来源：学院官网人工核对"
+    "note": "27(125), 158-167"
   },
   {
     "title": "Work-related musculoskeletal disorders, fatigue and stress among gas station workers in China: a cross-sectional study",
@@ -160,8 +254,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "14(7), e081853",
-    "source_note": "来源：学院官网人工核对"
+    "note": "14(7), e081853"
   },
   {
     "title": "Effects of a Brief Self-Compassion Online Intervention on Complex Posttraumatic Stress Symptoms Among Chinese University Students With Trauma History: A Pilot Randomized Controlled Trial",
@@ -182,8 +275,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "10497315241267248",
-    "source_note": "来源：学院官网人工核对"
+    "note": "10497315241267248"
   },
   {
     "title": "Positive Well-Being, Work-Related Rumination and Work Engagement among Chinese University Logistics Staff",
@@ -202,8 +294,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "14(1), 65",
-    "source_note": "来源：学院官网人工核对"
+    "note": "14(1), 65"
   },
   {
     "title": "The Relationship between Occupational Fatigue and Well-Being: The Moderating Effect of Unhealthy Eating Behaviour",
@@ -223,8 +314,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "14(1), 32",
-    "source_note": "来源：学院官网人工核对"
+    "note": "14(1), 32"
   },
   {
     "title": "Occupational fatigue and health of gas station workers: a review",
@@ -242,8 +332,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "76(2), 707-726",
-    "source_note": "来源：学院官网人工核对"
+    "note": "76(2), 707-726"
   },
   {
     "title": "Effects of mindfulness and fatigue on emotional processing: an event-related potentials study",
@@ -263,8 +352,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "17, 1175067",
-    "source_note": "来源：学院官网人工核对"
+    "note": "17, 1175067"
   },
   {
     "title": "A systematic review of new empirical data on lucid dream induction techniques",
@@ -281,8 +369,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "32(3), e13786",
-    "source_note": "来源：学院官网人工核对"
+    "note": "32(3), e13786"
   },
   {
     "title": "The Effect of Exercise on Academic Fatigue and Sleep Quality among University Students",
@@ -302,8 +389,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "13, 1025280",
-    "source_note": "来源：学院官网人工核对"
+    "note": "13, 1025280"
   },
   {
     "title": "Information overload, wellbeing and COVID-19: A survey in China",
@@ -320,8 +406,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "11(5), 62",
-    "source_note": "来源：学院官网人工核对"
+    "note": "11(5), 62"
   },
   {
     "title": "Relationship Between Workload, Fatigue and Sleep Quality of Psychiatric Staff",
@@ -340,8 +425,7 @@
     "confirmed": true,
     "manual": true,
     "category": "Conference paper",
-    "note": "Communications in Computer and Information Science, 1493, 151-164. Springer, Cham",
-    "source_note": "来源：学院官网人工核对"
+    "note": "Communications in Computer and Information Science, 1493, 151-164. Springer, Cham"
   },
   {
     "title": "Causes of Rail Staff Fatigue: Results of Qualitative Analysis and a Diary Study",
@@ -359,8 +443,7 @@
     "confirmed": true,
     "manual": true,
     "category": "Conference paper",
-    "note": "Communications in Computer and Information Science, 1318, 227-249. Springer, Cham",
-    "source_note": "来源：学院官网人工核对"
+    "note": "Communications in Computer and Information Science, 1318, 227-249. Springer, Cham"
   },
   {
     "title": "Effects of Occupational Fatigue on Cognitive Performance of Staff from a Train Operating Company: A Field Study",
@@ -377,8 +460,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "11, 2366",
-    "source_note": "来源：学院官网人工核对"
+    "note": "11, 2366"
   },
   {
     "title": "Mental Workload and Other Causes of Different Types of Fatigue in Rail Staff",
@@ -396,8 +478,7 @@
     "confirmed": true,
     "manual": true,
     "category": "Conference paper",
-    "note": "Communications in Computer and Information Science, 1012, 147-159. Springer, Cham",
-    "source_note": "来源：学院官网人工核对"
+    "note": "Communications in Computer and Information Science, 1012, 147-159. Springer, Cham"
   },
   {
     "title": "The Mediating Effect of Fatigue on Work-life Balance Positive Well-being in Railway Staff",
@@ -414,8 +495,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "6(6), 1-10",
-    "source_note": "来源：学院官网人工核对"
+    "note": "6(6), 1-10"
   },
   {
     "title": "A Preliminary Review of Fatigue among Rail Staff",
@@ -432,8 +512,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "9, 634",
-    "source_note": "来源：学院官网人工核对"
+    "note": "9, 634"
   },
   {
     "title": "Positive Well-Being and Work-Life Balance among UK Railway Staff",
@@ -450,8 +529,7 @@
     "openalex_id": "",
     "confirmed": true,
     "manual": true,
-    "note": "5(6), 1-6",
-    "source_note": "来源：学院官网人工核对"
+    "note": "5(6), 1-6"
   },
   {
     "title": "The Impact of Workload and Fatigue on Performance",
@@ -469,7 +547,6 @@
     "confirmed": true,
     "manual": true,
     "category": "Conference paper",
-    "note": "Communications in Computer and Information Science, 726, 90-105. Springer, Cham",
-    "source_note": "来源：学院官网人工核对"
+    "note": "Communications in Computer and Information Science, 726, 90-105. Springer, Cham"
   }
 ]
